@@ -1,4 +1,5 @@
 package com.tiltclock.wear.ui
+import androidx.compose.foundation.clickable
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.text.BasicText
@@ -15,10 +16,11 @@ import com.tiltclock.wear.R
 import com.tiltclock.wear.data.*
 
 @Composable
-fun ClockCapsules(state: ClockState, scale: Float, modifier: Modifier = Modifier) {
+fun ClockCapsules(state: ClockState, scale: Float, modifier: Modifier = Modifier,permission: ()->Unit = {}) {
     val p = LocalWatchPalette.current
     Column(modifier, horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy((6*scale).dp)) {
-        GlassCapsule(Modifier.widthIn(max=(210*scale).dp)) {
+        GlassCapsule(Modifier.widthIn(max=(210*scale).dp).then(if(state.steps==Measurement.PermissionRequired)
+            Modifier.heightIn(min=48.dp).then(Modifier.clickable(onClick=permission)) else Modifier)) {
             WatchIcon("calendar",Modifier.size((10*scale).dp),true)
             Spacer(Modifier.width((4*scale).dp))
             WatchText(ClockText.date(state.now,stringArrayResource(R.array.weekdays),stringArrayResource(R.array.months)),10*scale,Modifier.weight(1f,fill=false))
