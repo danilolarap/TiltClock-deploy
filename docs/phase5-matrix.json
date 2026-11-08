@@ -1,0 +1,13 @@
+{
+  "environment": "API 37 phone emulator with debug-only round Watch configuration",
+  "checks": [
+    {"id":"compile-debug-release","status":"passed","evidence":"build-phase5.log and build-phase5-release.log"},
+    {"id":"unit-tests-lint","status":"passed","evidence":"phase5-verification.json"},
+    {"id":"six-native-presets","status":"passed","evidence":"phase5-gpu/report.json"},
+    {"id":"glb-import-invalid-persistence-offline","status":"passed","evidence":"phase5-device.json"},
+    {"id":"two-sizes-themes-languages-fontscale","status":"executed with visual differences","evidence":"captures/phase5-*.png"},
+    {"id":"visual-one-pixel-target","status":"not met","evidence":"phase5-overlay.html; known geometry, blur and 3D differences"},
+    {"id":"physical-samsung-sensors-health-battery-ambient","status":"not executed","evidence":"FASE5-SAMSUNG.md"},
+    {"id":"stable-30-presented-fps-on-samsung","status":"not executed"}
+  ]
+}
