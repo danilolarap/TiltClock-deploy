@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application>
+        <provider android:name="com.tiltclock.wear.verification.ImportTestProvider" android:authorities="com.tiltclock.wear.phase4" android:exported="false" />
         <activity android:name="com.tiltclock.wear.verification.RendererTestActivity" android:exported="true" />
     </application>
+    <instrumentation android:name="com.tiltclock.wear.verification.Phase4Instrumentation" android:targetPackage="com.tiltclock.wear" android:label="Phase 4 verification" />
     <!-- Developer-only probe, absent from the release manifest and UI. -->
     <instrumentation android:name="com.tiltclock.wear.verification.RendererInstrumentation"
         android:targetPackage="com.tiltclock.wear" android:label="TiltClock renderer verification" />
