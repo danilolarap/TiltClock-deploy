@@ -9,6 +9,9 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tiltclock.wear.ClockViewModel
 import com.tiltclock.wear.ui.RendererScreen
+import com.tiltclock.wear.data.Measurement
+import java.time.ZonedDateTime
+import java.time.Instant
 
 /** Debug-only geometry host for emulator input tests. No launcher, fake measurements or release UI. */
 class RendererTestActivity : ComponentActivity() {
@@ -23,7 +26,14 @@ class RendererTestActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val model: ClockViewModel = viewModel()
-            RendererScreen(model,model.state.collectAsStateWithLifecycle().value)
+            val live=model.state.collectAsStateWithLifecycle().value
+            val fixture=intent.getBooleanExtra("fixture",false)
+            RendererScreen(model,if(fixture) live.copy(
+                now=ZonedDateTime.parse("2022-10-24T08:27:00-05:00"),
+                steps=Measurement.Available(1259L,"debug visual fixture",Instant.now()),
+                battery=Measurement.Available(85,"debug visual fixture",Instant.now()),
+                preferences=live.preferences.copy(avatar="holo",scale=1f,
+                    theme=intent.getStringExtra("theme") ?: "light",language=intent.getStringExtra("language") ?: "es")) else live)
         }
         window.decorView.post { window.decorView.windowInsetsController?.hide(android.view.WindowInsets.Type.systemBars()) }
     }
