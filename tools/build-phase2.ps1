@@ -1,4 +1,4 @@
-param([switch]$Offline)
+param([switch]$Offline,[string]$LogPath='docs/build-phase2.log')
 $ErrorActionPreference = 'Stop'
 Set-Location (Split-Path -Parent $PSScriptRoot)
 $env:ANDROID_USER_HOME = Join-Path $PWD '.android'
@@ -15,7 +15,7 @@ if (!(Test-Path $debugKey)) {
 $arguments = @('--gradle-user-home','.gradle-user-home','--no-daemon',':app:assembleDebug',':app:testDebugUnitTest',':app:lintDebug')
 if ($Offline) { $arguments += '--offline' }
 $ErrorActionPreference = 'Continue'
-& $gradle @arguments *> docs/build-phase2.log
+& $gradle @arguments *> $LogPath
 $result = $LASTEXITCODE
-Get-Content docs/build-phase2.log -Tail 65
+Get-Content $LogPath -Tail 65
 exit $result
