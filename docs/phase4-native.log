@@ -1,0 +1,11 @@
+--------- beginning of main
+11-08 21:02:38.882  7018  7038 I TiltClockMetrics: {"event":"loaded","avatar":"holo","loadMs":582,"processPssKb":148456,"nativeHeapBytes":81825824,"gpuMemoryBytes":null}
+11-08 21:02:42.836  7018  7038 I TiltClockMetrics: {"event":"frames","submittedFps":22.906621158845965,"skipped":21,"meanCpuSubmitMs":1.198314705882353}
+11-08 21:02:47.869  7018  7038 I TiltClockMetrics: {"event":"frames","submittedFps":28.806111822544814,"skipped":0,"meanCpuSubmitMs":0.8151572413793103}
+11-08 21:02:51.097  7018  7038 I TiltClockMetrics: {"event":"loaded","avatar":"import_e17e492e2d054eaf84485470162b391c","loadMs":17,"processPssKb":150754,"nativeHeapBytes":91266224,"gpuMemoryBytes":null}
+11-08 21:02:52.892  7018  7038 I TiltClockMetrics: {"event":"frames","submittedFps":27.67386363649938,"skipped":5,"meanCpuSubmitMs":1.0738756944444445}
+11-08 21:02:57.925  7018  7038 I TiltClockMetrics: {"event":"frames","submittedFps":28.60942631722716,"skipped":0,"meanCpuSubmitMs":0.8173590277777778}
+--------- beginning of main
+11-08 21:03:04.056  7095  7115 I TiltClockMetrics: {"event":"loaded","avatar":"import_e17e492e2d054eaf84485470162b391c","loadMs":619,"processPssKb":150837,"nativeHeapBytes":90588864,"gpuMemoryBytes":null}
+11-08 21:03:08.108  7095  7115 I TiltClockMetrics: {"event":"frames","submittedFps":22.952868121541865,"skipped":14,"meanCpuSubmitMs":1.3005751937984498}
+11-08 21:03:13.131  7095  7115 I TiltClockMetrics: {"event":"frames","submittedFps":28.664614160856857,"skipped":0,"meanCpuSubmitMs":0.8087347222222223}
