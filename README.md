@@ -16,6 +16,9 @@ Es una aplicación Wear OS circular, no una esfera seleccionable del sistema.
 - [Resultados finales y límites](docs/FASE5-RESULTADOS.md)
 - [Instalación en Galaxy Watch](docs/FASE5-INSTALACION.md)
 - [Superposición visual](docs/phase5-overlay.html)
+- [Matriz de validación](docs/phase5-matrix.json)
+- [Pruebas físicas pendientes](docs/FASE5-SAMSUNG.md)
+- [Hashes, firma y resultados automatizados](docs/phase5-verification.json)
 - [Resultados de fase 4](docs/FASE4-RESULTADOS.md)
 - [Procedencia de mediciones](docs/FASE4-DATOS.md)
 - [Importar y transferir GLB](docs/FASE4-IMPORTACION.md)
@@ -29,10 +32,32 @@ Es una aplicación Wear OS circular, no una esfera seleccionable del sistema.
 - [Verificación de fase 2](docs/FASE2-RESULTADOS.md)
 - [Pruebas pendientes en Samsung](docs/FASE2-PRUEBAS-SAMSUNG.md)
 
+## Estado de la entrega
+
+Versión `0.5.0-validation` (versionCode 5). La ronda de validación disponible de las
+cinco fases está entregada; siguen abiertos los criterios físicos y visuales indicados abajo.
+
+| Comprobación ejecutada | Resultado |
+|---|---|
+| Pruebas unitarias | 35 aprobadas, 0 fallos |
+| Lint debug | 0 errores, 18 avisos |
+| Seis avatares nativos | Carga y renderizado aprobados en emulador |
+| Importación GLB | Copia, rechazo de inválidos, aceptación GPU y restauración sin red aprobados |
+| APK debug | Compilado y firmado con esquema v2 |
+| APK release | Compilado sin componentes de prueba; sin firmar |
+| Original web | 20 archivos auditados sin cambios |
+
+Entorno de pruebas: emulador de teléfono Android API 37 con host circular exclusivo
+de debug. Se generaron capturas en aproximadamente 298 y 229 dp, ambos temas,
+español/inglés y letra ampliada. Esto no equivale a una prueba en Wear OS o Samsung físico.
+Los datos fijos de las capturas existen únicamente en herramientas de depuración.
+
 ## Abrir y compilar
 
 Abrir esta carpeta en Android Studio, no la carpeta original TiltClock.
-Requisitos fijados: SDK 37, Build Tools 36.0.0, JDK mínimo 17 compatible con Gradle 9.6.
+Configuración fijada: SDK 37, Build Tools 36.0.0 y Gradle 9.6. El entorno verificado
+utiliza el JBR de Android Studio; los scripts contienen rutas locales que deben adaptarse
+en otro equipo. El nivel de lenguaje Java del proyecto es 17.
 `local.properties` contiene solo la ruta del SDK de esta máquina y no se versiona.
 
 En este entorno, el script usa Gradle ya instalado, caché de dependencias de solo lectura
