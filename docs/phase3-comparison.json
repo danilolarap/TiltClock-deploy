@@ -1,0 +1,16 @@
+﻿[
+    {
+        "note":  "Nearest-neighbor normalized global difference, includes typography and 3D; not a geometric pixel-perfect score.",
+        "meanAbsoluteRgbError":  15.794110282929836,
+        "androidPixels":  800,
+        "webInternalDiameter":  298,
+        "theme":  "light"
+    },
+    {
+        "note":  "Nearest-neighbor normalized global difference, includes typography and 3D; not a geometric pixel-perfect score.",
+        "meanAbsoluteRgbError":  20.091692186205968,
+        "androidPixels":  800,
+        "webInternalDiameter":  298,
+        "theme":  "dark"
+    }
+]
