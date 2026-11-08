@@ -1,4 +1,9 @@
 <resources>
+    <string name="avatar_loading">Loading avatar…</string>
+    <string name="avatar_error">Load failed; previous avatar retained</string>
+    <string name="sensor_unavailable">Orientation unavailable; drag the avatar</string>
+    <string name="close_settings">Close</string>
+    <string-array name="avatar_names"><item>Holographic atom</item><item>Fox</item><item>Bird</item><item>Raccoon</item><item>Coin</item><item>Riot</item></string-array>
     <string name="app_name">TiltClock 3D</string>
     <string name="base_status">Android foundation · Phase 1</string>
     <string name="renderer_pending">3D renderer pending</string>

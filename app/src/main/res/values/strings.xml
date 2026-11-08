@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">TiltClock 3D</string>
-    <string name="base_status">Base Android · Fase 1</string>
+    <string name="base_status">TiltClock requiere Wear OS circular</string>
+    <string name="avatar_loading">Cargando avatar…</string>
+    <string name="avatar_error">No se pudo cargar; avatar anterior conservado</string>
+    <string name="sensor_unavailable">Orientación no disponible; desliza el avatar</string>
+    <string name="close_settings">Cerrar</string>
+    <string-array name="avatar_names"><item>Átomo holográfico</item><item>Zorro</item><item>Pájaro</item><item>Mapache</item><item>Moneda</item><item>Riot</item></string-array>
     <string name="renderer_pending">Renderizador 3D pendiente</string>
     <string name="steps_unavailable">Pasos: no disponibles</string>
     <string name="battery_unknown">Batería: no disponible</string>
