@@ -113,17 +113,35 @@ adb connect IP_DEL_RELOJ:PUERTO_DE_DEPURACION
 adb devices -l
 adb -s IP_DEL_RELOJ:PUERTO_DE_DEPURACION install -r app/build/outputs/apk/debug/app-debug.apk
 adb -s IP_DEL_RELOJ:PUERTO_DE_DEPURACION shell am start -n com.tiltclock.wear/.MainActivity
-adb -s IP_DEL_RELOJ:PUERTO_DE_DEPURACION logcat -s AndroidRuntime
+adb -s IP_DEL_RELOJ:PUERTO_DE_DEPURACION logcat -s TiltClockHealth TiltClockMetrics AndroidRuntime
 ```
 
 Los dos puertos pueden ser distintos y cambiar. También se puede usar Pair Devices Using Wi-Fi
 desde Android Studio. Solo se admite geometría circular y modo reloj. No se fuerza pantalla encendida.
 No se ha probado esta instalación en un Samsung físico en esta sesión.
 
-## Retomar
+## Datos e importación
 
-Continuar con la fase 3 de `docs/PLAN.md`, conservando la auditoría y los hashes.
-Las capturas web claro/oscuro ya están en `docs/captures`; faltan fuentes Android
-empaquetadas, pantalla fiel y comparación 2D. La evaluación física del motor sigue
-siendo necesaria antes de consolidar Filament para los modelos de millones de triángulos.
-El original permanece de solo lectura durante todas las fases.
+Los pasos proceden de `Health Services STEPS_DAILY` cuando el reloj ofrece esa
+capacidad y se concede actividad física. Los totales sustituyen al anterior; las
+lecturas antiguas o de otro día se retiran. Sin datos se muestra un estado de
+desconocido, permiso o no disponible. La meta de 10.000 es propia de TiltClock;
+no se garantiza igualdad con Samsung Health.
+
+El botón inferior acepta GLB 2 autocontenido de hasta 32 MiB mediante un selector
+compatible y conserva una copia privada. Si falla, mantiene el avatar anterior.
+Para APK debug sin proveedor existe la transferencia ADB documentada en
+[Importación](docs/FASE4-IMPORTACION.md). La alternativa de transferencia para una
+distribución release sin proveedor aún está pendiente.
+
+## Pendientes para la aceptación final
+
+Validar en Samsung físico sensores y arrastre combinados, pasos diarios, permisos,
+batería, bisel, ambiente, autonomía y rendimiento por modelo. No se han demostrado
+30 FPS estables en el reloj. Persisten diferencias visuales de geometría, tipografía,
+blur e iluminación; el objetivo de un píxel no está cumplido.
+
+Las fuentes Inter y Space Grotesk ya están empaquetadas con sus licencias, y existen
+capturas y superposición comparativa. Continuar desde la matriz de
+[pruebas Samsung](docs/FASE5-SAMSUNG.md) y los [resultados finales](docs/FASE5-RESULTADOS.md).
+El proyecto web original permanece de sólo lectura.
