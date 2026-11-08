@@ -7,3 +7,14 @@
 local.properties
 *.iml
 .idea/
+.kotlin/
+tools/vendor/
+filament-metadata.xml
+docs/renderer-full-logcat.txt
+docs/renderer-logcat.txt
+docs/filament-diagnostic.log
+docs/renderer-live-logcat.txt
+docs/diagnostic-*.log
+docs/render-diagnostic/
+docs/render-no-normal/
+docs/emulator*.log
