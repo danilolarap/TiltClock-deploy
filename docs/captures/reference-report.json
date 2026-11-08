@@ -5,7 +5,212 @@
     "deviceScaleFactor": 1
   },
   "source": "C:\\Users\\Danilo\\Documents\\TiltClock\\index.html",
-  "captures": [],
-  "status": "blocked",
-  "error": "Error: CDP timeout: Page.enable"
+  "captures": [
+    {
+      "theme": "light",
+      "clip": {
+        "x": 45,
+        "y": 272,
+        "width": 300,
+        "height": 300,
+        "scale": 1
+      },
+      "avatar": "holo",
+      "scale": 1,
+      "orientation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "theme": "dark",
+      "clip": {
+        "x": 45,
+        "y": 272,
+        "width": 300,
+        "height": 300,
+        "scale": 1
+      },
+      "avatar": "holo",
+      "scale": 1,
+      "orientation": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "status": "captured; inspect screenshots before visual comparison",
+  "readiness": {
+    "three": true,
+    "canvas": {
+      "cssWidth": 298,
+      "cssHeight": 298,
+      "pixelWidth": 298,
+      "pixelHeight": 298
+    },
+    "fonts": [
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "loaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "unloaded"
+      },
+      {
+        "family": "Inter",
+        "status": "loaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "status": "unloaded"
+      },
+      {
+        "family": "Space Grotesk",
+        "status": "loaded"
+      },
+      {
+        "family": "Font Awesome 6 Brands",
+        "status": "unloaded"
+      },
+      {
+        "family": "Font Awesome 6 Free",
+        "status": "loaded"
+      },
+      {
+        "family": "Font Awesome 6 Free",
+        "status": "loaded"
+      },
+      {
+        "family": "Font Awesome 5 Brands",
+        "status": "unloaded"
+      },
+      {
+        "family": "Font Awesome 5 Free",
+        "status": "unloaded"
+      },
+      {
+        "family": "Font Awesome 5 Free",
+        "status": "unloaded"
+      },
+      {
+        "family": "FontAwesome",
+        "status": "unloaded"
+      },
+      {
+        "family": "FontAwesome",
+        "status": "unloaded"
+      },
+      {
+        "family": "FontAwesome",
+        "status": "unloaded"
+      },
+      {
+        "family": "FontAwesome",
+        "status": "unloaded"
+      }
+    ],
+    "screen": {
+      "x": 45,
+      "y": 266.565673828125,
+      "width": 300,
+      "height": 300,
+      "clientWidth": 298,
+      "clientHeight": 298,
+      "borderLeft": "1px"
+    },
+    "timeFont": "30px",
+    "frameWidth": "340px"
+  },
+  "modelCapture": "mapache"
 }

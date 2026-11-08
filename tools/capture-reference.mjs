@@ -7,7 +7,7 @@ fs.mkdirSync(out, { recursive: true });
 const chrome = process.env.CHROME_PATH ?? 'C:/Program Files/Google/Chrome/Application/chrome.exe';
 const source = path.resolve(process.argv[2] ?? 'C:/Users/Danilo/Documents/TiltClock/index.html');
 const child = spawn(chrome, ['--headless=new', '--no-first-run', '--no-default-browser-check',
-  '--disable-gpu',
+  '--use-angle=swiftshader', '--enable-unsafe-swiftshader', '--allow-file-access-from-files',
   `--user-data-dir=${path.resolve('.browser-profile-pipe')}`, '--remote-debugging-pipe', 'about:blank'],
   { windowsHide: true, stdio: ['ignore','ignore','pipe','pipe','pipe'] });
 let stderr = '', buffer = '', next = 1;
@@ -45,9 +45,13 @@ try {
     await document.fonts.ready;
     const screen=document.querySelector('.watch-screen');
     const rect=screen.getBoundingClientRect();
-    return {three:typeof THREE!=='undefined',canvas:!!document.querySelector('canvas'),
+    return {three:typeof THREE!=='undefined',
       fonts:[...document.fonts].map(f=>({family:f.family,status:f.status})),
-      screen:{x:rect.x,y:rect.y,width:rect.width,height:rect.height},
+      screen:{x:rect.x,y:rect.y,width:rect.width,height:rect.height,
+        clientWidth:screen.clientWidth,clientHeight:screen.clientHeight,
+        borderLeft:getComputedStyle(screen).borderLeftWidth},
+      canvas:(()=>{const c=document.querySelector('canvas');const r=c?.getBoundingClientRect();return c?{
+        cssWidth:r.width,cssHeight:r.height,pixelWidth:c.width,pixelHeight:c.height}:null})(),
       timeFont:getComputedStyle(document.querySelector('#watch-time')).fontSize,
       frameWidth:getComputedStyle(document.querySelector('#watch-frame')).width};
   })()`);
@@ -80,6 +84,16 @@ try {
       const snap=await c('Page.captureScreenshot',{format:'png',clip:rect});
       fs.writeFileSync(path.join(out,`reference-${theme}.png`),Buffer.from(snap.data,'base64'));
       report.captures.push({theme,clip:rect,avatar:'holo',scale:1,orientation:[0,0,0]});
+    }
+    if (process.env.CAPTURE_MODEL === 'mapache') {
+      await evaluate(`new Promise((resolve,reject)=>createGLTFLoader().load('assets/models/mapache.glb',g=>{setupLoadedGLTF(g);resolve(true)},undefined,e=>reject(String(e))))`);
+      await new Promise(r=>setTimeout(r,1000));
+      await evaluate(`document.body.classList.remove('dark-theme');avatarMesh.rotation.set(0,0,0);mouseTargetX=0;mouseTargetY=0;`);
+      await new Promise(r=>setTimeout(r,400));
+      const rect=await evaluate(`(()=>{const r=document.querySelector('.watch-screen').getBoundingClientRect();return {x:r.x,y:r.y,width:r.width,height:r.height,scale:1}})()`);
+      const snap=await c('Page.captureScreenshot',{format:'png',clip:rect});
+      fs.writeFileSync(path.join(out,'reference-mapache-light.png'),Buffer.from(snap.data,'base64'));
+      report.modelCapture='mapache';
     }
     report.status='captured; inspect screenshots before visual comparison';
   }
