@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">TiltClock 3D</string>
+    <string name="base_status">Base Android · Fase 1</string>
+    <string name="renderer_pending">Renderizador 3D pendiente</string>
+    <string name="steps_unavailable">Pasos: no disponibles</string>
+    <string name="battery_unknown">Batería: no disponible</string>
+    <string name="battery_value">Batería: %1$d%%</string>
+    <string name="round_required">TiltClock requiere un Galaxy Watch con pantalla circular y Wear OS.</string>
+    <string-array name="weekdays"><item>DOM</item><item>LUN</item><item>MAR</item><item>MIÉ</item><item>JUE</item><item>VIE</item><item>SÁB</item></string-array>
+    <string-array name="months"><item>ENE</item><item>FEB</item><item>MAR</item><item>ABR</item><item>MAY</item><item>JUN</item><item>JUL</item><item>AGO</item><item>SEP</item><item>OCT</item><item>NOV</item><item>DIC</item></string-array>
+</resources>

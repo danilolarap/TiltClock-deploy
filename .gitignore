@@ -1,0 +1,9 @@
+.gradle/
+.gradle-user-home/
+.android/
+.browser-profile/
+.browser-profile-*/
+**/build/
+local.properties
+*.iml
+.idea/
