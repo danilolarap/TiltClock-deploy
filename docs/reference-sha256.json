@@ -1,0 +1,106 @@
+{
+  "source": "C:\\Users\\Danilo\\Documents\\TiltClock",
+  "capturedAt": "2026-11-08T06:18:57.098Z",
+  "files": [
+    {
+      "file": ".editorconfig",
+      "bytes": 252,
+      "sha256": "6fdefeaee90e59683d9ed6530568bc50fc2aa3f93107d8db34726ace2b418203"
+    },
+    {
+      "file": ".gitignore",
+      "bytes": 69,
+      "sha256": "bccfbd6f3636a77623499ebf2cbc76d622618551828b1c107ef4829c56c5b9a3"
+    },
+    {
+      "file": ".prettierrc",
+      "bytes": 137,
+      "sha256": "98d57f15fc91c221f5d3c4bddcf50657953be3cfd796569327bc8461858e8430"
+    },
+    {
+      "file": ".vscode/settings.json",
+      "bytes": 42,
+      "sha256": "d7c4c5969a13be89c26b96373e811c72455b9bcc938c3e2ee1de236c55773289"
+    },
+    {
+      "file": "assets/models/.gitkeep",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "file": "assets/models/mapache.glb",
+      "bytes": 9323260,
+      "sha256": "3f6aad45c0ef00ae354130720fd301263b06edbd8d99b38daabedcf6efcc86a5"
+    },
+    {
+      "file": "assets/models/moneda.glb",
+      "bytes": 5472008,
+      "sha256": "731e59c17391e43f67ffaabf65202f8c2cc715f4bd74713292e66c4a75372db5"
+    },
+    {
+      "file": "assets/models/pajaro.glb",
+      "bytes": 8693308,
+      "sha256": "cbc42a44a183f5246ab40e32e36bed220867374f81db154af1ace6167defd7b4"
+    },
+    {
+      "file": "assets/models/riot.glb",
+      "bytes": 7848296,
+      "sha256": "565d48b15c749b7b31b7bc239af2e8859a459672269304a42ade6d7d37608c54"
+    },
+    {
+      "file": "css/styles.css",
+      "bytes": 8056,
+      "sha256": "b65a21e2087346c63a0935cd1766519ff26cde4e6b064340905730085b2c4ba6"
+    },
+    {
+      "file": "index.html",
+      "bytes": 22494,
+      "sha256": "fb1687cc909338ce5bb5d0b2c05344483249fc2a4080bb19f1aa0061b3fb5438"
+    },
+    {
+      "file": "js/app.js",
+      "bytes": 3904,
+      "sha256": "76d05a6be17580fa69fa47741a6cb66d1787e7e1e441759759528b2436fd4f2d"
+    },
+    {
+      "file": "js/avatar3d.js",
+      "bytes": 19520,
+      "sha256": "e73e392f08c9fed3a854a43bfac64c8e94cc6a5c0540ae1065e8ffe96214e243"
+    },
+    {
+      "file": "js/deviceSelector.js",
+      "bytes": 3749,
+      "sha256": "6843a6f226964e6eab16d5baf0fb9916a3cbbd2fec37c6d1c524d58c4f0cbdca"
+    },
+    {
+      "file": "js/gyroscope.js",
+      "bytes": 2757,
+      "sha256": "856c043a6496598385ccd053dceaa0fce8b9bf3b2e59f6f0bf4627b773666145"
+    },
+    {
+      "file": "js/pedometer.js",
+      "bytes": 3636,
+      "sha256": "1d39cf1cefd2a98426da8e7907b6af6f2307676486db86501443857fa40f5efe"
+    },
+    {
+      "file": "js/themeAndLang.js",
+      "bytes": 8425,
+      "sha256": "57d4de93e40e7818d500fdb5ebd47e0a3bf3c14ecccc7083346416674f7cd2b9"
+    },
+    {
+      "file": "LICENSE",
+      "bytes": 1101,
+      "sha256": "749bb4cd9030a9ec1a8449bfa36f291b4331b483f397d37c0ceee3a9f4f6d236"
+    },
+    {
+      "file": "README.md",
+      "bytes": 3688,
+      "sha256": "db8386a4018403476f047b302925bcf9238e70f0cd2b0c6288fdd1f092d07a7d"
+    },
+    {
+      "file": "vercel.json",
+      "bytes": 639,
+      "sha256": "755b0db7ff1ddba2041c5cdad4cee3ce6d69ea7570d2bce040cf5feef0c3d645"
+    }
+  ]
+}

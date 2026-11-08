@@ -1,0 +1,158 @@
+[
+  {
+    "file": "assets/models/mapache.glb",
+    "bytes": 9323260,
+    "sha256": "3f6aad45c0ef00ae354130720fd301263b06edbd8d99b38daabedcf6efcc86a5",
+    "gltfVersion": "2.0",
+    "generator": "glTF-Transform v4.4.2",
+    "extensionsUsed": [
+      "EXT_texture_webp",
+      "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired": [
+      "EXT_texture_webp",
+      "KHR_draco_mesh_compression"
+    ],
+    "draco": true,
+    "meshes": 1,
+    "nodes": 1,
+    "vertices": 1693658,
+    "triangles": 3122652,
+    "materials": 1,
+    "images": [
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      },
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      },
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      }
+    ],
+    "animations": [],
+    "skins": 0,
+    "externalUris": [],
+    "validation": "GLB structure + copy hash only. Not a Khronos validator or GPU load test."
+  },
+  {
+    "file": "assets/models/moneda.glb",
+    "bytes": 5472008,
+    "sha256": "731e59c17391e43f67ffaabf65202f8c2cc715f4bd74713292e66c4a75372db5",
+    "gltfVersion": "2.0",
+    "generator": "glTF-Transform v4.4.2",
+    "extensionsUsed": [
+      "EXT_texture_webp",
+      "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired": [
+      "EXT_texture_webp",
+      "KHR_draco_mesh_compression"
+    ],
+    "draco": true,
+    "meshes": 1,
+    "nodes": 1,
+    "vertices": 1323346,
+    "triangles": 1975857,
+    "materials": 1,
+    "images": [
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      },
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      },
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      }
+    ],
+    "animations": [],
+    "skins": 0,
+    "externalUris": [],
+    "validation": "GLB structure + copy hash only. Not a Khronos validator or GPU load test."
+  },
+  {
+    "file": "assets/models/pajaro.glb",
+    "bytes": 8693308,
+    "sha256": "cbc42a44a183f5246ab40e32e36bed220867374f81db154af1ace6167defd7b4",
+    "gltfVersion": "2.0",
+    "generator": "glTF-Transform v4.4.2",
+    "extensionsUsed": [
+      "EXT_texture_webp",
+      "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired": [
+      "EXT_texture_webp",
+      "KHR_draco_mesh_compression"
+    ],
+    "draco": true,
+    "meshes": 1,
+    "nodes": 1,
+    "vertices": 1630806,
+    "triangles": 3116404,
+    "materials": 1,
+    "images": [
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      },
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      },
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      }
+    ],
+    "animations": [],
+    "skins": 0,
+    "externalUris": [],
+    "validation": "GLB structure + copy hash only. Not a Khronos validator or GPU load test."
+  },
+  {
+    "file": "assets/models/riot.glb",
+    "bytes": 7848296,
+    "sha256": "565d48b15c749b7b31b7bc239af2e8859a459672269304a42ade6d7d37608c54",
+    "gltfVersion": "2.0",
+    "generator": "glTF-Transform v4.4.2",
+    "extensionsUsed": [
+      "EXT_texture_webp",
+      "KHR_draco_mesh_compression"
+    ],
+    "extensionsRequired": [
+      "EXT_texture_webp",
+      "KHR_draco_mesh_compression"
+    ],
+    "draco": true,
+    "meshes": 1,
+    "nodes": 1,
+    "vertices": 1637304,
+    "triangles": 3133220,
+    "materials": 1,
+    "images": [
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      },
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      },
+      {
+        "mimeType": "image/webp",
+        "embedded": true
+      }
+    ],
+    "animations": [],
+    "skins": 0,
+    "externalUris": [],
+    "validation": "GLB structure + copy hash only. Not a Khronos validator or GPU load test."
+  }
+]

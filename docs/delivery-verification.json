@@ -1,0 +1,44 @@
+﻿{
+    "unitTests":  {
+                      "errors":  0,
+                      "skipped":  0,
+                      "total":  5,
+                      "failures":  0
+                  },
+    "apk":  {
+                "path":  "C:\\Users\\Danilo\\Documents\\TiltClock-deploy\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+                "sha256":  "80615921d0e8f96c3d439a51ddc34f38f9281f6fa8c2f7d47d3ff475bbacecdd",
+                "bytes":  56945804
+            },
+    "models":  [
+                   {
+                       "verified":  true,
+                       "sha256":  "3f6aad45c0ef00ae354130720fd301263b06edbd8d99b38daabedcf6efcc86a5",
+                       "name":  "assets/models/mapache.glb",
+                       "bytes":  9323260
+                   },
+                   {
+                       "verified":  true,
+                       "sha256":  "731e59c17391e43f67ffaabf65202f8c2cc715f4bd74713292e66c4a75372db5",
+                       "name":  "assets/models/moneda.glb",
+                       "bytes":  5472008
+                   },
+                   {
+                       "verified":  true,
+                       "sha256":  "cbc42a44a183f5246ab40e32e36bed220867374f81db154af1ace6167defd7b4",
+                       "name":  "assets/models/pajaro.glb",
+                       "bytes":  8693308
+                   },
+                   {
+                       "verified":  true,
+                       "sha256":  "565d48b15c749b7b31b7bc239af2e8859a459672269304a42ade6d7d37608c54",
+                       "name":  "assets/models/riot.glb",
+                       "bytes":  7848296
+                   }
+               ],
+    "visualComparison":  "blocked: see captures/reference-report.json",
+    "productScan":  "PASS: no other device formats, WebView or fixed measurement placeholders in main Kotlin/XML",
+    "lint":  "blocked: offline cache missing lint-gradle:32.4.1",
+    "physicalWatch":  "not tested",
+    "generatedAt":  "2026-11-08T06:27:44.8841987Z"
+}

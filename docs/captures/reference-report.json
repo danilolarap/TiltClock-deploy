@@ -1,0 +1,11 @@
+{
+  "viewport": {
+    "width": 390,
+    "height": 844,
+    "deviceScaleFactor": 1
+  },
+  "source": "C:\\Users\\Danilo\\Documents\\TiltClock\\index.html",
+  "captures": [],
+  "status": "blocked",
+  "error": "Error: CDP timeout: Page.enable"
+}

@@ -1,0 +1,15 @@
+[11016:18416:1108/012218.328:ERROR:components\os_crypt\async\browser\os_crypt_win.cc:63] Failed to encrypt: El sistema no puede encontrar el archivo especificado. (0x2)
+[11016:8788:1108/012218.360:ERROR:chrome\installer\util\google_update_settings_win.cc:270] Failed opening key Software\Google\Update\ClientStateMedium\{8A69D345-D564-463c-AFF1-A69D9E530F96} to set usagestats; result: 5
+[11016:3980:1108/012218.389:ERROR:components\password_manager\core\browser\password_store\login_database_async_helper.cc:100] Encryption is not available.
+[11016:3080:1108/012218.389:ERROR:components\password_manager\core\browser\password_store\login_database_async_helper.cc:100] Encryption is not available.
+[11016:18416:1108/012218.456:ERROR:content\browser\gpu\gpu_process_host.cc:1044] GPU process exited unexpectedly: exit_code=-1073741790
+[11016:8788:1108/012218.457:ERROR:components\viz\host\persistent_cache_sandboxed_file_factory.cc:153] Failed to open persistent cache files in directory "C:\Users\Danilo\Documents\TiltClock-deploy\.browser-profile-pipe\GPUPersistentCache\DawnGraphiteCache\VUIMOGEQSLQ64H7PBD4SBP3YY7MWDE7S", error: 0: El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso. (0x20)
+[11016:18416:1108/012218.488:ERROR:content\browser\gpu\gpu_process_host.cc:1044] GPU process exited unexpectedly: exit_code=-1073741790
+[11016:18416:1108/012218.497:ERROR:content\browser\gpu\gpu_process_host.cc:1044] GPU process exited unexpectedly: exit_code=-1073741790
+[11016:10392:1108/012218.498:ERROR:components\viz\host\persistent_cache_sandboxed_file_factory.cc:153] Failed to open persistent cache files in directory "C:\Users\Danilo\Documents\TiltClock-deploy\.browser-profile-pipe\GPUPersistentCache\DawnGraphiteCache\VUIMOGEQSLQ64H7PBD4SBP3YY7MWDE7S", error: 0: La operación se completó correctamente. (0x0)
+[11016:14552:1108/012218.505:ERROR:services\device\public\cpp\geolocation\system_geolocation_source_win.cc:251] Failed to get location access status: El parámetro no es correcto. (0x80070057)
+[11016:18416:1108/012218.507:ERROR:content\browser\gpu\gpu_process_host.cc:1044] GPU process exited unexpectedly: exit_code=-1073741790
+[11016:18416:1108/012218.515:ERROR:content\browser\gpu\gpu_process_host.cc:1044] GPU process exited unexpectedly: exit_code=-1073741790
+[11016:6508:1108/012218.515:ERROR:components\viz\host\persistent_cache_sandboxed_file_factory.cc:153] Failed to open persistent cache files in directory "C:\Users\Danilo\Documents\TiltClock-deploy\.browser-profile-pipe\GPUPersistentCache\DawnGraphiteCache\VUIMOGEQSLQ64H7PBD4SBP3YY7MWDE7S", error: 0: El proceso no tiene acceso al archivo porque está siendo utilizado por otro proceso. (0x20)
+[11016:18416:1108/012218.522:ERROR:content\browser\gpu\gpu_process_host.cc:1044] GPU process exited unexpectedly: exit_code=-1073741790
+[11016:18416:1108/012218.522:FATAL:content\browser\gpu\gpu_data_manager_impl_private.cc:389] GPU process isn't usable. Goodbye.
