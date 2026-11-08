@@ -14,13 +14,3 @@ object CircularGeometry {
         return 2 * sqrt(safeRadius * safeRadius - farthestY * farthestY)
     }
 }
-
-object AvatarInteraction {
-    const val INITIAL_SCALE = 1f
-    const val MIN_SCALE = .3f
-    const val MAX_SCALE = 3f
-    const val TAP_SCALE_STEP = .1f
-    const val HOLD_DELAY_MS = 250L
-    const val HOLD_INTERVAL_MS = 50L
-    const val HOLD_SCALE_STEP = .03f
-}
