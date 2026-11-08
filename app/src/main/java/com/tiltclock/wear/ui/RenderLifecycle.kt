@@ -11,16 +11,17 @@ import com.tiltclock.wear.render.FilamentRenderer
 import com.tiltclock.wear.sensors.OrientationController
 
 @Composable
-fun RenderLifecycle(renderer: FilamentRenderer,sensors: OrientationController,blocked: Boolean,onForeground: (Boolean)->Unit = {}) {
+fun RenderLifecycle(renderer: FilamentRenderer,sensors: OrientationController,blocked: Boolean,onForeground: (Boolean)->Unit = {},sensorsEnabled: Boolean=true) {
     val owner = LocalLifecycleOwner.current; val context = LocalContext.current
-    DisposableEffect(owner,renderer,sensors,blocked) {
+    DisposableEffect(owner,renderer,sensors,blocked,sensorsEnabled) {
         val power = context.getSystemService(PowerManager::class.java)
         fun update() {
-            val foreground=owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && power.isInteractive
+            val resumed=owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED)
+            val foreground=ActivityPolicy.measurements(resumed,power.isInteractive)
             onForeground(foreground)
-            val active = foreground && !blocked
+            val active = ActivityPolicy.render(resumed,power.isInteractive,blocked)
             renderer.setActive(active)
-            if (active) sensors.start() else sensors.stop()
+            if (active && sensorsEnabled) sensors.start() else sensors.stop()
         }
         val observer = LifecycleEventObserver { _,_ -> update() }
         val receiver = object : BroadcastReceiver() { override fun onReceive(c: Context,i: Intent) = update() }
