@@ -11,12 +11,14 @@ import com.tiltclock.wear.render.FilamentRenderer
 import com.tiltclock.wear.sensors.OrientationController
 
 @Composable
-fun RenderLifecycle(renderer: FilamentRenderer,sensors: OrientationController,blocked: Boolean) {
+fun RenderLifecycle(renderer: FilamentRenderer,sensors: OrientationController,blocked: Boolean,onForeground: (Boolean)->Unit = {}) {
     val owner = LocalLifecycleOwner.current; val context = LocalContext.current
     DisposableEffect(owner,renderer,sensors,blocked) {
         val power = context.getSystemService(PowerManager::class.java)
         fun update() {
-            val active = owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && power.isInteractive && !blocked
+            val foreground=owner.lifecycle.currentState.isAtLeast(Lifecycle.State.RESUMED) && power.isInteractive
+            onForeground(foreground)
+            val active = foreground && !blocked
             renderer.setActive(active)
             if (active) sensors.start() else sensors.stop()
         }
@@ -29,6 +31,6 @@ fun RenderLifecycle(renderer: FilamentRenderer,sensors: OrientationController,bl
         else context.registerReceiver(receiver,filter)
         owner.lifecycle.addObserver(observer); update()
         onDispose { context.unregisterReceiver(receiver); owner.lifecycle.removeObserver(observer)
-            sensors.stop(); renderer.setActive(false) }
+            sensors.stop(); renderer.setActive(false); onForeground(false) }
     }
 }
