@@ -44,7 +44,7 @@ fun CircularSettings(state: ClockState, render: RenderState, model: ClockViewMod
             when(page) {
                 "settings" -> {
                     CircularSettingRow(radius,"◇ Avatar",render.error?.let { stringResource(R.string.avatar_error) }
-                        ?: if(render.loading) stringResource(R.string.avatar_loading) else names[AvatarCatalog.ids.indexOf(render.avatar).coerceAtLeast(0)]) { page="avatar" }
+                        ?: if(render.loading) stringResource(R.string.avatar_loading) else if(render.avatar?.startsWith("import_")==true) stringResource(R.string.imported_avatar) else names[AvatarCatalog.ids.indexOf(render.avatar).coerceAtLeast(0)]) { page="avatar" }
                     CircularSettingRow(radius,stringResource(R.string.theme_title),stringResource(if(state.preferences.theme=="dark") R.string.dark_theme else R.string.light_theme)) { page="theme" }
                     CircularSettingRow(radius,stringResource(R.string.language_title),if(state.preferences.language=="es") "Español" else "English") { page="language" }
                 }
