@@ -1,5 +1,8 @@
 # Resultado de fase 1
 
+Este informe conserva la evidencia de fase 1. Para el APK actual y las pruebas
+del renderizador consultar [fase 2](FASE2-RESULTADOS.md).
+
 La base Android está implementada y compilada. **La fase no cierra todavía su referencia
 visual: las capturas válidas están bloqueadas por el entorno.** La experiencia 3D y la
 interfaz final pertenecen a las fases siguientes. No se ha ejecutado la app en un reloj.

@@ -3,7 +3,7 @@
 Proyecto independiente: `C:\Users\Danilo\Documents\TiltClock-deploy`.
 Referencia de solo lectura: `C:\Users\Danilo\Documents\TiltClock`.
 
-## 1. Auditoría y base Android — implementación actual
+## 1. Auditoría y base Android — historial
 
 - Inventariar HTML, CSS, JavaScript, licencia y GLB sin escribir en el original.
 - Registrar SHA-256 del original y comprobar las copias de los cuatro modelos.
@@ -16,9 +16,13 @@ Referencia de solo lectura: `C:\Users\Danilo\Documents\TiltClock`.
 
 Salida: base Android ejecutable y evidencias técnicas. La pantalla diagnóstica identifica
 la fase; **no es todavía la interfaz TiltClock terminada**. Se reemplaza en fase 3.
-Las capturas válidas de referencia siguen siendo un requisito pendiente, antes de cerrar medidas visuales.
+Las capturas web se desbloquearon en fase 2: ver `captures/reference-report.json`.
 
 ## 2. Renderizador y manipulación 3D
+
+Implementación y límites actuales: [arquitectura](FASE2-ARQUITECTURA.md),
+[resultados](FASE2-RESULTADOS.md) y [verificación física pendiente](FASE2-PRUEBAS-SAMSUNG.md).
+Las tareas de validación física de esta lista permanecen abiertas hasta probar el reloj.
 
 - Obtener versiones verificadas de Filament/gltfio y ejecutar una prueba con cada GLB original.
 - Resolver `KHR_draco_mesh_compression` y `EXT_texture_webp` requeridas, sin perder materiales.

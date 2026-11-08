@@ -1,5 +1,8 @@
 # Auditoría de la referencia — fase 1
 
+Documento histórico de fase 1. El estado posterior (renderizador, Fox y capturas
+desbloqueadas) está en [resultados de fase 2](FASE2-RESULTADOS.md).
+
 Fecha de trabajo: 8 de noviembre de 2026, America/Bogota.
 
 ## Archivos y protección
