@@ -1,0 +1,9 @@
+﻿{
+    "apkSha256":  "7cf61f35d0c7dcee1cb40594714fb140bc620311a146cd2bc7e65545b3a17b4a",
+    "lintErrors":  0,
+    "tests":  31,
+    "failures":  0,
+    "original":  "20 source files unchanged",
+    "environment":  "API 37 Android phone emulator, debug circular host; Samsung physical tests pending",
+    "lintWarnings":  19
+}
