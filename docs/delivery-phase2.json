@@ -1,0 +1,59 @@
+﻿{
+    "renderer":  {
+                     "gpu":  "Android Emulator OpenGL ES Translator, AMD Radeon(TM) Graphics",
+                     "engine":  "Filament/gltfio 1.77.3",
+                     "samsungValidated":  false,
+                     "report":  "render-probe/report.json"
+                 },
+    "lint":  {
+                 "errors":  0,
+                 "warnings":  9
+             },
+    "visualComparison":  "Web captures and native images present; final 2D layout/overlay belongs to phase 3",
+    "apk":  {
+                "path":  "C:\\Users\\Danilo\\Documents\\TiltClock-deploy\\app\\build\\outputs\\apk\\debug\\app-debug.apk",
+                "sha256":  "4c9e7e25d60cecb94b50cf0ecbff00efa4896cd8d5c57a9cb047e1190d7077cb",
+                "bytes":  81914213
+            },
+    "productScan":  "PASS: no other device formats, WebView or fixed measurement placeholders in main Kotlin/XML",
+    "generatedAt":  "2026-11-08T16:53:58.2073925Z",
+    "models":  [
+                   {
+                       "verified":  true,
+                       "sha256":  "3f6aad45c0ef00ae354130720fd301263b06edbd8d99b38daabedcf6efcc86a5",
+                       "name":  "assets/models/mapache.glb",
+                       "bytes":  9323260
+                   },
+                   {
+                       "verified":  true,
+                       "sha256":  "731e59c17391e43f67ffaabf65202f8c2cc715f4bd74713292e66c4a75372db5",
+                       "name":  "assets/models/moneda.glb",
+                       "bytes":  5472008
+                   },
+                   {
+                       "verified":  true,
+                       "sha256":  "cbc42a44a183f5246ab40e32e36bed220867374f81db154af1ace6167defd7b4",
+                       "name":  "assets/models/pajaro.glb",
+                       "bytes":  8693308
+                   },
+                   {
+                       "verified":  true,
+                       "sha256":  "565d48b15c749b7b31b7bc239af2e8859a459672269304a42ade6d7d37608c54",
+                       "name":  "assets/models/riot.glb",
+                       "bytes":  7848296
+                   },
+                   {
+                       "verified":  true,
+                       "sha256":  "d97044e701822bac5a62696459b27d7b375aada5de8574ed4362edbba94771f7",
+                       "name":  "assets/models/fox.glb",
+                       "bytes":  162852
+                   }
+               ],
+    "physicalWatch":  "not tested",
+    "unitTests":  {
+                      "errors":  0,
+                      "skipped":  0,
+                      "total":  20,
+                      "failures":  0
+                  }
+}

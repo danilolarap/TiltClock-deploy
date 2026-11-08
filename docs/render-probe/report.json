@@ -1,0 +1,81 @@
+{
+  "device": "sdk_gphone64_x86_64",
+  "sdk": 37,
+  "results": [
+    {
+      "id": "holo",
+      "loaded": true,
+      "animated": false,
+      "preparedBytes": 475084,
+      "loadMs": 308,
+      "processPssKb": 126109,
+      "frames": 30,
+      "offscreenElapsedMs": 982,
+      "nonTransparentPixels": 6338,
+      "coloredPixels": 4174
+    },
+    {
+      "id": "fox",
+      "loaded": true,
+      "animated": true,
+      "preparedBytes": 162852,
+      "loadMs": 100,
+      "processPssKb": 117746,
+      "frames": 30,
+      "offscreenElapsedMs": 354,
+      "nonTransparentPixels": 10095,
+      "coloredPixels": 9660
+    },
+    {
+      "id": "pajaro",
+      "loaded": true,
+      "animated": false,
+      "preparedBytes": 12135988,
+      "loadMs": 3988,
+      "processPssKb": 241657,
+      "frames": 30,
+      "offscreenElapsedMs": 500,
+      "nonTransparentPixels": 52776,
+      "coloredPixels": 26212
+    },
+    {
+      "id": "mapache",
+      "loaded": true,
+      "animated": false,
+      "preparedBytes": 12954732,
+      "loadMs": 3167,
+      "processPssKb": 260965,
+      "frames": 30,
+      "offscreenElapsedMs": 367,
+      "nonTransparentPixels": 47313,
+      "coloredPixels": 41537
+    },
+    {
+      "id": "moneda",
+      "loaded": true,
+      "animated": false,
+      "preparedBytes": 7244108,
+      "loadMs": 1547,
+      "processPssKb": 222449,
+      "frames": 30,
+      "offscreenElapsedMs": 349,
+      "nonTransparentPixels": 81742,
+      "coloredPixels": 80054
+    },
+    {
+      "id": "riot",
+      "loaded": true,
+      "animated": false,
+      "preparedBytes": 9763232,
+      "loadMs": 2373,
+      "processPssKb": 252745,
+      "frames": 30,
+      "offscreenElapsedMs": 376,
+      "nonTransparentPixels": 57841,
+      "coloredPixels": 46780
+    }
+  ],
+  "invalidLoadPreservesAvatar": true,
+  "rotationWhilePaused": true,
+  "success": true
+}
