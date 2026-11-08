@@ -72,16 +72,38 @@ Para otro equipo con red, crear la clave de depuración local con keytool (ver s
 configurar `local.properties` y ejecutar:
 
 ```powershell
-.\gradlew.bat --gradle-user-home .gradle-user-home :app:assembleDebug :app:testDebugUnitTest :app:lintDebug
+.\gradlew.bat --gradle-user-home .gradle-user-home :app:assembleDebug :app:assembleRelease :app:testDebugUnitTest :app:lintDebug
 ```
 
 El modo offline es una adaptación al entorno actual; no se desactiva Lint en la configuración.
-Para ejecutarlo con caché completa: `tools/build-phase2.ps1 -Offline`.
-APK: `app/build/outputs/apk/debug/app-debug.apk`.
+Para ejecutarlo con caché completa: `tools/build-phase5.ps1 -Offline`.
+
+- APK instalable de pruebas: `app/build/outputs/apk/debug/app-debug.apk`.
+- Release sin firmar: `app/build/outputs/apk/release/app-release-unsigned.apk`.
+
+Los APK son resultados locales de compilación y no se incluyen en Git. El release
+requiere una clave de firma propia antes de instalarlo o distribuirlo.
+
+## Repetir la verificación
+
+Con un emulador de pruebas ya iniciado, adaptar el identificador del dispositivo:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File tools/test-phase5.ps1 -Serial emulator-5580
+powershell -ExecutionPolicy Bypass -File tools/verify-phase5.ps1
+```
+
+La matriz instala el APK debug, ejecuta las pruebas nativas e importación, cambia
+temporalmente red, resolución, densidad y tamaño de letra del emulador y genera
+evidencias en `docs/phase5-*` y `docs/captures/phase5-*`. Usar una instancia destinada
+a pruebas. `verify-phase5.ps1` necesita esos resultados y las compilaciones previas.
+Abrir `docs/phase5-overlay.html` localmente para comparar las capturas superpuestas;
+GitHub muestra su código, no ejecuta esa herramienta.
 
 ## Instalar en Galaxy Watch con Wear OS
 
-Esta compilación permite comprobar el motor y la interfaz circular de fase 3; la validación física sigue pendiente.
+Esta compilación incluye la interfaz, el motor y las integraciones de las fases 1–4,
+con las comprobaciones disponibles de fase 5. La validación física sigue pendiente.
 Activar Opciones de desarrollador y Depuración inalámbrica en el reloj. Con reloj y PC
 en la misma red, abrir el diálogo de emparejamiento y usar sus direcciones y puertos reales:
 
