@@ -11,8 +11,8 @@ android {
         applicationId = "com.tiltclock.wear"
         minSdk = 30
         targetSdk = 37
-        versionCode = 3
-        versionName = "0.3.0-phase3"
+        versionCode = 4
+        versionName = "0.4.0-phase4"
     }
     buildFeatures { compose = true }
     bundle { language { enableSplit = false } }
@@ -32,6 +32,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.health:health-services-client:1.1.0")
     implementation("androidx.wear.compose:compose-foundation:1.5.6")
     implementation("com.google.android.filament:filament-android:1.77.3")
     implementation("com.google.android.filament:gltfio-android:1.77.3")
