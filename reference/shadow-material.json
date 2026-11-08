@@ -1,0 +1,11 @@
+{
+  "source": "app/src/main/materials/shadow.mat",
+  "artifact": "app/src/main/assets/materials/shadow.filamat",
+  "compiler": "matc 1.77.3",
+  "release": "https://github.com/google/filament/releases/tag/v1.77.3",
+  "compilerWindowsSha256": "dd7b3c91d798872a04ab93b1a1c2e8f41f716e4b939cfc1a89bd253b2405898e",
+  "artifactSha256": "355dad86ea84e421fbe97f72f093e6af4bf8594fe62386e138204c670ad6dc11",
+  "platform": "mobile",
+  "api": "opengl",
+  "rebuild": "tools/compile-shadow.ps1 -Matc PATH_TO_MATC_1_77_3"
+}
