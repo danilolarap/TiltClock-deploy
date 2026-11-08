@@ -11,6 +11,7 @@ import com.tiltclock.wear.ui.RendererScreen
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        window.decorView.post { window.decorView.windowInsetsController?.hide(android.view.WindowInsets.Type.systemBars()) }
         setContent {
             val model: ClockViewModel = viewModel()
             val state by model.state.collectAsStateWithLifecycle()
