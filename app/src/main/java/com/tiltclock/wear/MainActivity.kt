@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.runtime.getValue
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.tiltclock.wear.ui.FoundationScreen
+import com.tiltclock.wear.ui.RendererScreen
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val model: ClockViewModel = viewModel()
             val state by model.state.collectAsStateWithLifecycle()
-            FoundationScreen(state)
+            RendererScreen(model,state)
         }
     }
 }
