@@ -1,3 +1,4 @@
+@file:OptIn(androidx.compose.ui.text.ExperimentalTextApi::class)
 package com.tiltclock.wear.ui
 
 import androidx.compose.runtime.*
@@ -5,8 +6,11 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.*
 import com.tiltclock.wear.R
 
-val Inter = FontFamily(Font(R.font.inter, FontWeight.Normal), Font(R.font.inter, FontWeight.SemiBold), Font(R.font.inter, FontWeight.Bold))
-val SpaceGrotesk = FontFamily(Font(R.font.space_grotesk, FontWeight.Bold))
+val Inter = FontFamily(*listOf(400,600,700).map { weight ->
+    Font(R.font.inter,FontWeight(weight),variationSettings=FontVariation.Settings(FontVariation.weight(weight)))
+}.toTypedArray())
+val SpaceGrotesk = FontFamily(Font(R.font.space_grotesk, FontWeight.Bold,
+    variationSettings=FontVariation.Settings(FontVariation.weight(700))))
 data class WatchPalette(val dark: Boolean) {
     val background = Color(if (dark) 0xFF030712 else 0xFFF8FAFC)
     val text = Color(if (dark) 0xFFF8FAFC else 0xFF0F172A)
