@@ -44,12 +44,6 @@
   "status": "captured; inspect screenshots before visual comparison",
   "readiness": {
     "three": true,
-    "canvas": {
-      "cssWidth": 298,
-      "cssHeight": 298,
-      "pixelWidth": 298,
-      "pixelHeight": 298
-    },
     "fonts": [
       {
         "family": "Inter",
@@ -202,15 +196,20 @@
     ],
     "screen": {
       "x": 45,
-      "y": 266.565673828125,
+      "y": 266.8995361328125,
       "width": 300,
       "height": 300,
       "clientWidth": 298,
       "clientHeight": 298,
       "borderLeft": "1px"
     },
+    "canvas": {
+      "cssWidth": 298,
+      "cssHeight": 298,
+      "pixelWidth": 298,
+      "pixelHeight": 298
+    },
     "timeFont": "30px",
     "frameWidth": "340px"
-  },
-  "modelCapture": "mapache"
+  }
 }

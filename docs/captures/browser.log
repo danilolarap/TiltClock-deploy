@@ -1,8 +1,1 @@
 Created TensorFlow Lite XNNPACK delegate for CPU.
-[1904:15400:1108/114516.241:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:77] Failed to open named pipe server process 10028: Acceso denegado. (0x5)
-[1904:15400:1108/114516.457:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:77] Failed to open named pipe server process 10028: Acceso denegado. (0x5)
-[1904:15400:1108/114516.865:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:77] Failed to open named pipe server process 10028: Acceso denegado. (0x5)
-[1904:15400:1108/114517.469:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:77] Failed to open named pipe server process 10028: Acceso denegado. (0x5)
-[1904:1476:1108/114518.280:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:77] Failed to open named pipe server process 10028: Acceso denegado. (0x5)
-[1904:1476:1108/114519.290:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:77] Failed to open named pipe server process 10028: Acceso denegado. (0x5)
-[1904:15400:1108/114520.303:ERROR:chrome\updater\ipc\update_service_dialer_win.cc:77] Failed to open named pipe server process 10028: Acceso denegado. (0x5)
