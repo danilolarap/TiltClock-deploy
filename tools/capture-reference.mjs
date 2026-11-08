@@ -37,6 +37,7 @@ try {
   const { sessionId } = await call('Target.attachToTarget', {targetId,flatten:true});
   const c = (method,params={})=>call(method,params,sessionId);
   await c('Page.enable');
+  await c('Page.addScriptToEvaluateOnNewDocument',{source:`window.__intervals=[];const originalInterval=window.setInterval;window.setInterval=(...args)=>{const id=originalInterval(...args);window.__intervals.push(id);return id;};`});
   await c('Emulation.setDeviceMetricsOverride', {...report.viewport,mobile:true});
   await c('Page.navigate', {url: new URL(`file:///${source.replaceAll('\\','/')}`).href});
   await new Promise(r=>setTimeout(r,12000));
@@ -66,6 +67,7 @@ try {
   } else {
     for (const theme of ['light','dark']) {
       await evaluate(`(()=>{
+        window.__intervals.forEach(clearInterval);
         document.body.classList.toggle('dark-theme',${theme==='dark'});
         document.querySelector('main').style.animation='none';
         document.querySelector('#watch-time').textContent='08:27';
