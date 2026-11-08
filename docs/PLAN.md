@@ -61,6 +61,11 @@ Criterio: capturas comparables; errores geométricos, tipográficos y 3D medidos
 
 ## 4. Pasos reales, importación y ciclo de vida
 
+Implementación: [mediciones](FASE4-DATOS.md), [importación](FASE4-IMPORTACION.md),
+[ciclo de vida](FASE4-CICLO-VIDA.md) y [resultados](FASE4-RESULTADOS.md).
+La integración está compilada; la procedencia y semántica en Samsung físico deben
+validarse en fase 5. El emulador disponible no proporciona Health Services diario.
+
 - Health Services: consultar capacidades y `STEPS_DAILY`, permiso ACTIVITY_RECOGNITION
   según API y proveedor; estados de carga, permiso y no disponible.
 - Tratar los totales como totales, no incrementos; validar fecha, zona, reinicio diario,
