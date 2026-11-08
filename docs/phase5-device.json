@@ -1,0 +1,13 @@
+{
+  "validImportExactBytes": true,
+  "durablePrivatePath": true,
+  "invalidRejected": true,
+  "externalRejected": true,
+  "invalidPreservesPreference": true,
+  "actualHealthState": "Unavailable",
+  "documentPickerAvailable": true,
+  "success": true,
+  "importedGpuAccepted": true,
+  "importedRestoredAfterRestart": true,
+  "documentPickerOpened": true
+}
