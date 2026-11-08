@@ -82,6 +82,12 @@ Criterio: ninguna medición ficticia ni edición manual; importación válida e 
 
 ## 5. Validación y entrega
 
+Entrega de la validación disponible: [resultados](FASE5-RESULTADOS.md),
+[matriz](phase5-matrix.json), [superposición](phase5-overlay.html) e
+[instalación](FASE5-INSTALACION.md). Las pruebas físicas de FASE5-SAMSUNG.md
+y el objetivo visual de un píxel no están aprobados; no se consideran completados
+por haber terminado la ronda de emulador y empaquetado.
+
 - Dos tamaños circulares, temas, idiomas, fuente ampliada y navegación atrás.
 - Sensores físicos, arrastre, transición entre ambos, zoom, animaciones y persistencia.
 - Permisos denegados, cambio de día/zona, segundo plano, importación y sin conexión.

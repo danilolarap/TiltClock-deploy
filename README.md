@@ -1,6 +1,8 @@
 # TiltClock 3D para Samsung Galaxy Watch
 
-Proyecto Android independiente, Kotlin y Gradle Kotlin DSL. **Entrega incremental: fase 4**.
+Proyecto Android independiente, Kotlin y Gradle Kotlin DSL. **Entrega de validación: fase 5**.
+La validación disponible en emulador está documentada; la aceptación física Samsung y
+la fidelidad geométrica de un píxel siguen pendientes. No es una certificación de producto final.
 Motor nativo Filament/gltfio 1.77.3, átomo procedural y cinco presets GLB locales;
 rotación por arrastre y orientación fusionada, zoom persistente y primer clip animado.
 Hora y batería proceden del sistema; pasos diarios de Health Services si el dispositivo
@@ -11,6 +13,9 @@ de desarrollo para relojes sin proveedor. La validación física permanece pendi
 Es una aplicación Wear OS circular, no una esfera seleccionable del sistema.
 
 - [Cinco fases y criterios de aceptación](docs/PLAN.md)
+- [Resultados finales y límites](docs/FASE5-RESULTADOS.md)
+- [Instalación en Galaxy Watch](docs/FASE5-INSTALACION.md)
+- [Superposición visual](docs/phase5-overlay.html)
 - [Resultados de fase 4](docs/FASE4-RESULTADOS.md)
 - [Procedencia de mediciones](docs/FASE4-DATOS.md)
 - [Importar y transferir GLB](docs/FASE4-IMPORTACION.md)
@@ -34,7 +39,7 @@ En este entorno, el script usa Gradle ya instalado, caché de dependencias de so
 y directorios de trabajo dentro del proyecto:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File tools/build-phase4.ps1
+powershell -ExecutionPolicy Bypass -File tools/build-phase5.ps1
 node tools/audit-reference.mjs --verify
 ```
 
