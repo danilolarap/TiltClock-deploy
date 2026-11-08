@@ -1,0 +1,12 @@
+﻿{
+    "apkSha256":  "9096b7172908cd6f621c3513d9eebe91fb036744bc1aad4ac9c7c7a28ffc6a05",
+    "releaseSha256":  "4899ee1f42dc62b1745da1928ac262c6721cce4c95c81727378ddbc063b71c21",
+    "failures":  0,
+    "lintErrors":  0,
+    "gpuPresets":  6,
+    "original":  "20 source files unchanged",
+    "lintWarnings":  18,
+    "tests":  35,
+    "physicalSamsung":  "not executed",
+    "releaseExcludesDebugComponents":  true
+}
