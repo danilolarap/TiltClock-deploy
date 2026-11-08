@@ -1,4 +1,14 @@
 <resources>
+    <string name="settings_title">✎ Ajustes</string>
+    <string name="theme_title">Tema</string>
+    <string name="language_title">Idioma</string>
+    <string name="light_theme">Claro</string>
+    <string name="dark_theme">Oscuro</string>
+    <string name="back_settings">Volver</string>
+    <string name="upload_avatar">Cargar Avatar .GLB</string>
+    <string name="steps_label">PASOS</string>
+    <string name="permission_short">Permiso requerido</string>
+    <string name="steps_unknown_short">PASOS —</string>
     <string name="app_name">TiltClock 3D</string>
     <string name="base_status">TiltClock requiere Wear OS circular</string>
     <string name="avatar_loading">Cargando avatar…</string>
