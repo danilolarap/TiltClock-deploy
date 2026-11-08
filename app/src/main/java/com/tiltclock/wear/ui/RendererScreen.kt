@@ -27,6 +27,10 @@ import kotlinx.coroutines.CancellationException
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
 import androidx.compose.ui.semantics.*
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
+import android.app.Activity
+import android.Manifest
 
 /** Executable 3D integration; precision capsules, fonts and final settings belong to phase 3. */
 @Composable
@@ -51,11 +55,23 @@ private fun WatchContent(model: ClockViewModel,state: ClockState) {
         { (context.getSystemService(android.content.Context.DISPLAY_SERVICE) as android.hardware.display.DisplayManager)
             .getDisplay(android.view.Display.DEFAULT_DISPLAY)?.rotation ?: 0 },{ sensorsAvailable = it }) }
     var picker by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf(false) }
+    var notice by remember { mutableStateOf(false) }
+    var documentOpen by remember { mutableStateOf(false) }
+    var permissionDenied by remember { mutableStateOf(false) }
+    val busy by model.importBusy.collectAsStateWithLifecycle()
+    val importError by model.importError.collectAsStateWithLifecycle()
+    val permissionLauncher=rememberLauncherForActivityResult(ActivityResultContracts.RequestPermission()) { granted ->
+        permissionDenied=!granted; model.permissionChanged()
+    }
+    val documentLauncher=rememberLauncherForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+        documentOpen=false
+        if(result.resultCode==Activity.RESULT_OK) result.data?.data?.let(model::importDocument)
+    }
     val settingsLabel=stringResource(R.string.settings_title)
     val pauseLabel=stringResource(R.string.animation_control)
     val render by model.render.collectAsStateWithLifecycle()
     val selection by model.selection.collectAsStateWithLifecycle()
-    val id = selection?.first ?: state.preferences.avatar
+    val id = selection?.first ?: model.rendererId(state.preferences)
     val sequence = selection?.second ?: 0
     LaunchedEffect(state.preferencesReady,id,sequence) {
         if (state.preferencesReady) {
@@ -67,7 +83,7 @@ private fun WatchContent(model: ClockViewModel,state: ClockState) {
         }
     }
     LaunchedEffect(state.preferences.scale) { renderer.setScale(state.preferences.scale) }
-    RenderLifecycle(renderer,sensors,picker)
+    RenderLifecycle(renderer,sensors,picker || notice || documentOpen,model::setForeground)
     DisposableEffect(renderer) { onDispose { sensors.stop(); renderer.close() } }
     BackHandler(picker) { picker = false }
     Box(Modifier.fillMaxSize().background(Color.Black),contentAlignment=Alignment.Center) {
@@ -76,13 +92,17 @@ private fun WatchContent(model: ClockViewModel,state: ClockState) {
             AvatarSurface(renderer,Modifier.fillMaxSize())
             WatchRing(state.steps)
             // This layer handles only the avatar; later sibling controls receive their own touches.
-            Box(Modifier.fillMaxSize().pointerInput(picker) {
-                if (!picker) detectDragGestures(onDragStart={ transforms.beginDrag() },
+            Box(Modifier.fillMaxSize().pointerInput(picker,notice,documentOpen) {
+                if (!picker && !notice && !documentOpen) detectDragGestures(onDragStart={ transforms.beginDrag() },
                     onDragEnd={ transforms.endDrag() },onDragCancel={ transforms.endDrag() }) { event,delta ->
                     event.consume(); transforms.drag(delta.x,delta.y,size.width.toFloat())
                 }
             })
-            ClockCapsules(state,scale,Modifier.align(Alignment.TopCenter).padding(top=(24*scale).dp))
+            ClockCapsules(state,scale,Modifier.align(Alignment.TopCenter).padding(top=(24*scale).dp)) {
+                if(permissionDenied) context.startActivity(android.content.Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS,
+                    android.net.Uri.parse("package:${context.packageName}")).addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
+                else permissionLauncher.launch(Manifest.permission.ACTIVITY_RECOGNITION)
+            }
             Box(Modifier.align(Alignment.CenterStart).size(48.dp).semantics { contentDescription=settingsLabel }.clickable { picker = true },contentAlignment=Alignment.Center) {
                 Box(Modifier.size((24*scale).dp).background(LocalWatchPalette.current.glass,CircleShape),contentAlignment=Alignment.Center) {
                     WatchIcon("pencil",Modifier.size((10*scale).dp))
@@ -100,13 +120,24 @@ private fun WatchContent(model: ClockViewModel,state: ClockState) {
                 if (render.error != null) WatchText(stringResource(R.string.avatar_error),10f)
                 if (!sensorsAvailable) WatchText(stringResource(R.string.sensor_unavailable),9f)
                 WatchBattery(state.battery,scale)
-                UploadButton(scale) { picker = true }
+                if(busy) WatchText(stringResource(R.string.import_copying),10f)
+                if(importError) WatchText(stringResource(R.string.import_failed),10f)
+                UploadButton(scale,state.preferences.avatar=="custom") {
+                    if(!busy && !render.loading) {
+                        if(model.hasInbox()) model.importDocument(null)
+                        else if(DocumentAvailability.supported(context)) {
+                            try { documentOpen=true; documentLauncher.launch(DocumentAvailability.intent()) }
+                            catch(failure: android.content.ActivityNotFoundException) { documentOpen=false; notice=true }
+                        } else notice=true
+                    }
+                }
             }
             ScreenShine()
             AnimatedVisibility(picker,enter=fadeIn(tween(280))+slideInVertically(tween(280)) { it/12 },
                 exit=fadeOut(tween(280))+slideOutVertically(tween(280)) { it/12 }) {
                 CircularSettings(state,render,model) { picker=false }
             }
+            if(notice) ImportNotice { notice=false }
         }
     }
 }
