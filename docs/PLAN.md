@@ -42,6 +42,10 @@ Si el rendimiento falla, presentar medidas y opciones; no reducir los originales
 
 ## 3. Pantalla fiel y ajustes circulares
 
+Implementación y evidencias: [alcance](FASE3-ALCANCE.md), [geometría](FASE3-GEOMETRIA.md)
+y [resultados](FASE3-RESULTADOS.md). La comparación registra diferencias pendientes;
+la validación física y el objetivo de un píxel permanecen abiertos.
+
 - Completar capturas claro/oscuro con fuentes y recursos cargados, viewport móvil explícito.
 - Empaquetar Inter y Space Grotesk con sus licencias; fijar versiones de Compose Wear disponibles.
   La base actual usa Compose Foundation: **los componentes específicos de Compose Wear aún no están integrados**.

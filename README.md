@@ -1,13 +1,16 @@
 # TiltClock 3D para Samsung Galaxy Watch
 
-Proyecto Android independiente, Kotlin y Gradle Kotlin DSL. **Entrega incremental: fase 2**.
+Proyecto Android independiente, Kotlin y Gradle Kotlin DSL. **Entrega incremental: fase 3**.
 Motor nativo Filament/gltfio 1.77.3, átomo procedural y cinco presets GLB locales;
 rotación por arrastre y orientación fusionada, zoom persistente y primer clip animado.
 Hora y batería proceden del sistema; pasos explícitamente no disponibles hasta fase 4.
-La pantalla intermedia permite usar el motor; diseño final y ajustes completos son fase 3.
+La pantalla usa fuentes locales, cápsulas, anillo y ajustes circulares con tema e idioma persistentes.
+La importación de documentos y los pasos diarios se implementan en fase 4.
 Es una aplicación Wear OS circular, no una esfera seleccionable del sistema.
 
 - [Cinco fases y criterios de aceptación](docs/PLAN.md)
+- [Alcance de fase 3](docs/FASE3-ALCANCE.md)
+- [Resultados de fase 3](docs/FASE3-RESULTADOS.md)
 - [Auditoría y decisiones técnicas](docs/AUDITORIA.md)
 - [Resultados y limitaciones de verificación](docs/VERIFICACION.md)
 - [Procedencia y licencias](reference/NOTICE.md)
@@ -26,7 +29,7 @@ En este entorno, el script usa Gradle ya instalado, caché de dependencias de so
 y directorios de trabajo dentro del proyecto:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File tools/build-phase2.ps1
+powershell -ExecutionPolicy Bypass -File tools/build-phase3.ps1
 node tools/audit-reference.mjs --verify
 ```
 
@@ -43,7 +46,7 @@ APK: `app/build/outputs/apk/debug/app-debug.apk`.
 
 ## Instalar en Galaxy Watch con Wear OS
 
-Esta compilación permite comprobar el motor de fase 2; el diseño visual final está pendiente.
+Esta compilación permite comprobar el motor y la interfaz circular de fase 3; la validación física sigue pendiente.
 Activar Opciones de desarrollador y Depuración inalámbrica en el reloj. Con reloj y PC
 en la misma red, abrir el diálogo de emparejamiento y usar sus direcciones y puertos reales:
 
