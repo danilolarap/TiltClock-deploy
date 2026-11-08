@@ -1,4 +1,14 @@
 <resources>
+    <string name="settings_title">✎ Settings</string>
+    <string name="theme_title">Theme</string>
+    <string name="language_title">Language</string>
+    <string name="light_theme">Light</string>
+    <string name="dark_theme">Dark</string>
+    <string name="back_settings">Back</string>
+    <string name="upload_avatar">Upload .GLB Avatar</string>
+    <string name="steps_label">STEPS</string>
+    <string name="permission_short">Permission required</string>
+    <string name="steps_unknown_short">STEPS —</string>
     <string name="avatar_loading">Loading avatar…</string>
     <string name="avatar_error">Load failed; previous avatar retained</string>
     <string name="sensor_unavailable">Orientation unavailable; drag the avatar</string>
