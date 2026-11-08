@@ -20,8 +20,9 @@ import kotlinx.coroutines.*
 
 @Composable
 fun ZoomButton(direction: Int, action: (Int,Boolean) -> Unit) {
+    val palette = LocalWatchPalette.current
     Box(Modifier.size(48.dp).semantics {
-        contentDescription = if (direction > 0) "Acercar" else "Alejar"
+        contentDescription = if (direction > 0) "+" else "−"
         onClick { action(direction,false); true }
     }.pointerInput(direction) {
         val scope = CoroutineScope(currentCoroutineContext())
@@ -39,8 +40,8 @@ fun ZoomButton(direction: Int, action: (Int,Boolean) -> Unit) {
             } finally { job.cancel() }
         }
     },contentAlignment=Alignment.Center) {
-        Box(Modifier.size(24.dp).background(Color(0xBBE2E8F0),CircleShape),contentAlignment=Alignment.Center) {
-            BasicText(if (direction > 0) "+" else "−",style=TextStyle(color=Color(0xFF0F172A),fontSize=18.sp))
+        Box(Modifier.size(24.dp).background(palette.glass,CircleShape),contentAlignment=Alignment.Center) {
+            BasicText(if (direction > 0) "+" else "−",style=TextStyle(color=palette.text,fontSize=18.sp))
         }
     }
 }
