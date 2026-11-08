@@ -34,16 +34,16 @@ import android.Manifest
 
 /** Executable 3D integration; precision capsules, fonts and final settings belong to phase 3. */
 @Composable
-fun RendererScreen(model: ClockViewModel,state: ClockState) {
+fun RendererScreen(model: ClockViewModel,state: ClockState,visualFixture: Boolean=false) {
     WatchLocale(state.preferences.language) {
         CompositionLocalProvider(LocalWatchPalette provides WatchPalette(state.preferences.theme == "dark")) {
-            WatchContent(model,state)
+            WatchContent(model,state,visualFixture)
         }
     }
 }
 
 @Composable
-private fun WatchContent(model: ClockViewModel,state: ClockState) {
+private fun WatchContent(model: ClockViewModel,state: ClockState,visualFixture: Boolean) {
     val config = LocalConfiguration.current
     val watch = config.uiMode and Configuration.UI_MODE_TYPE_MASK == Configuration.UI_MODE_TYPE_WATCH
     if (!config.isScreenRound || !watch) { FoundationScreen(state); return }
@@ -83,7 +83,7 @@ private fun WatchContent(model: ClockViewModel,state: ClockState) {
         }
     }
     LaunchedEffect(state.preferences.scale) { renderer.setScale(state.preferences.scale) }
-    RenderLifecycle(renderer,sensors,picker || notice || documentOpen,model::setForeground)
+    RenderLifecycle(renderer,sensors,picker || notice || documentOpen,model::setForeground,!visualFixture)
     DisposableEffect(renderer) { onDispose { sensors.stop(); renderer.close() } }
     BackHandler(picker) { picker = false }
     Box(Modifier.fillMaxSize().background(Color.Black),contentAlignment=Alignment.Center) {

@@ -37,7 +37,7 @@ class RendererTestActivity : ComponentActivity() {
                 steps=Measurement.Available(1259L,"debug visual fixture",Instant.now()),
                 battery=Measurement.Available(85,"debug visual fixture",Instant.now()),
                 preferences=live.preferences.copy(avatar="holo",scale=1f,
-                    theme=intent.getStringExtra("theme") ?: "light",language=intent.getStringExtra("language") ?: "es")) else live)
+                    theme=intent.getStringExtra("theme") ?: "light",language=intent.getStringExtra("language") ?: "es")) else live,visualFixture=fixture)
         }
         window.decorView.post { window.decorView.windowInsetsController?.hide(android.view.WindowInsets.Type.systemBars()) }
     }
