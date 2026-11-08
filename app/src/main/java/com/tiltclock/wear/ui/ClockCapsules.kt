@@ -18,19 +18,20 @@ import com.tiltclock.wear.data.*
 fun ClockCapsules(state: ClockState, scale: Float, modifier: Modifier = Modifier) {
     val p = LocalWatchPalette.current
     Column(modifier, horizontalAlignment=Alignment.CenterHorizontally,verticalArrangement=Arrangement.spacedBy((6*scale).dp)) {
-        GlassCapsule {
+        GlassCapsule(Modifier.widthIn(max=(210*scale).dp)) {
             WatchIcon("calendar",Modifier.size((10*scale).dp),true)
             Spacer(Modifier.width((4*scale).dp))
-            WatchText(ClockText.date(state.now,stringArrayResource(R.array.weekdays),stringArrayResource(R.array.months)),10*scale)
+            WatchText(ClockText.date(state.now,stringArrayResource(R.array.weekdays),stringArrayResource(R.array.months)),10*scale,Modifier.weight(1f,fill=false))
             WatchText(" • ",10*scale)
             val steps = state.steps
             WatchIcon("steps",Modifier.size((10*scale).dp),true)
             WatchText(when(steps) {
-                is Measurement.Available -> "${steps.value} " + stringResource(R.string.steps_label)
+                is Measurement.Available -> java.text.NumberFormat.getIntegerInstance(
+                    androidx.compose.ui.platform.LocalConfiguration.current.locales[0]).format(steps.value) + " " + stringResource(R.string.steps_label)
                 Measurement.Loading -> "…"
                 Measurement.PermissionRequired -> stringResource(R.string.permission_short)
                 else -> stringResource(R.string.steps_unknown_short)
-            },9*scale)
+            },9*scale,Modifier.weight(1f,fill=false))
         }
         GlassCapsule {
             BasicText(ClockText.time(state.now),style=TextStyle(color=p.text,fontFamily=SpaceGrotesk,

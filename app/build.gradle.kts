@@ -15,6 +15,7 @@ android {
         versionName = "0.3.0-phase3"
     }
     buildFeatures { compose = true }
+    bundle { language { enableSplit = false } }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17

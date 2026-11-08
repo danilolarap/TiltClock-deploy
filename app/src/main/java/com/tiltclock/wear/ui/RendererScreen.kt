@@ -26,6 +26,7 @@ import com.tiltclock.wear.sensors.OrientationController
 import kotlinx.coroutines.CancellationException
 import androidx.compose.animation.*
 import androidx.compose.animation.core.tween
+import androidx.compose.ui.semantics.*
 
 /** Executable 3D integration; precision capsules, fonts and final settings belong to phase 3. */
 @Composable
@@ -49,7 +50,9 @@ private fun WatchContent(model: ClockViewModel,state: ClockState) {
     val sensors = remember { OrientationController(context,transforms,
         { (context.getSystemService(android.content.Context.DISPLAY_SERVICE) as android.hardware.display.DisplayManager)
             .getDisplay(android.view.Display.DEFAULT_DISPLAY)?.rotation ?: 0 },{ sensorsAvailable = it }) }
-    var picker by remember { mutableStateOf(false) }
+    var picker by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf(false) }
+    val settingsLabel=stringResource(R.string.settings_title)
+    val pauseLabel=stringResource(R.string.animation_control)
     val render by model.render.collectAsStateWithLifecycle()
     val selection by model.selection.collectAsStateWithLifecycle()
     val id = selection?.first ?: state.preferences.avatar
@@ -79,17 +82,19 @@ private fun WatchContent(model: ClockViewModel,state: ClockState) {
                     event.consume(); transforms.drag(delta.x,delta.y,size.width.toFloat())
                 }
             })
-            ClockCapsules(state,scale,Modifier.align(Alignment.TopCenter).padding(top=(8*scale).dp))
-            Box(Modifier.align(Alignment.CenterStart).padding(start=(0*scale).dp).size(48.dp).clickable { picker = true },contentAlignment=Alignment.Center) {
-                WatchIcon("pencil")
+            ClockCapsules(state,scale,Modifier.align(Alignment.TopCenter).padding(top=(24*scale).dp))
+            Box(Modifier.align(Alignment.CenterStart).size(48.dp).semantics { contentDescription=settingsLabel }.clickable { picker = true },contentAlignment=Alignment.Center) {
+                Box(Modifier.size((24*scale).dp).background(LocalWatchPalette.current.glass,CircleShape),contentAlignment=Alignment.Center) {
+                    WatchIcon("pencil",Modifier.size((10*scale).dp))
+                }
             }
             Column(Modifier.align(Alignment.CenterEnd),horizontalAlignment=Alignment.CenterHorizontally) {
                 ZoomButton(1,model::zoom); ZoomButton(-1,model::zoom)
-                if (render.animated) Box(Modifier.size(48.dp).clickable { renderer.toggleAnimation() },contentAlignment=Alignment.Center) {
+                if (render.animated) Box(Modifier.size(48.dp).semantics { contentDescription=pauseLabel }.clickable { renderer.toggleAnimation() },contentAlignment=Alignment.Center) {
                     WatchIcon(if (render.playing) "pause" else "play")
                 }
             }
-            Column(Modifier.align(Alignment.BottomCenter).padding(bottom=(4*scale).dp).fillMaxWidth(.8f),
+            Column(Modifier.align(Alignment.BottomCenter).padding(bottom=(20*scale).dp).fillMaxWidth(.8f),
                 horizontalAlignment=Alignment.CenterHorizontally) {
                 if (render.loading) WatchText(stringResource(R.string.avatar_loading),10f)
                 if (render.error != null) WatchText(stringResource(R.string.avatar_error),10f)

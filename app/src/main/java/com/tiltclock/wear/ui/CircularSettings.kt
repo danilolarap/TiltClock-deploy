@@ -21,10 +21,11 @@ import kotlinx.coroutines.launch
 import androidx.compose.foundation.gestures.scrollBy
 import androidx.wear.compose.foundation.CurvedLayout
 import androidx.wear.compose.foundation.basicCurvedText
+import androidx.wear.compose.foundation.CurvedTextStyle
 
 @Composable
 fun CircularSettings(state: ClockState, render: RenderState, model: ClockViewModel, close: () -> Unit) {
-    var page by remember { mutableStateOf("settings") }
+    var page by androidx.compose.runtime.saveable.rememberSaveable { mutableStateOf("settings") }
     BackHandler { if(page=="settings") close() else page="settings" }
     val p=LocalWatchPalette.current
     val scroll=rememberScrollState()
@@ -34,7 +35,7 @@ fun CircularSettings(state: ClockState, render: RenderState, model: ClockViewMod
     val names=stringArrayResource(R.array.avatar_names)
     val heading=stringResource(R.string.settings_title)
     BoxWithConstraints(Modifier.fillMaxSize().background(p.glass)) {
-        CurvedLayout { basicCurvedText(heading) }
+        CurvedLayout { basicCurvedText(heading,style=CurvedTextStyle(color=p.text,fontSize=14.sp)) }
         val radius=maxWidth.value/2
         Column(Modifier.fillMaxSize().onRotaryScrollEvent { scope.launch { scroll.scrollBy(it.verticalScrollPixels) }; true }
             .focusRequester(focus).focusable().verticalScroll(scroll).padding(vertical=(radius-24).dp),

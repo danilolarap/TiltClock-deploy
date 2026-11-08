@@ -1,4 +1,5 @@
 <resources>
+    <string name="animation_control">Pause or play animation</string>
     <string name="settings_title">✎ Settings</string>
     <string name="theme_title">Theme</string>
     <string name="language_title">Language</string>

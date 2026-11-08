@@ -9,6 +9,10 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.tiltclock.wear.ui.RendererScreen
 
 class MainActivity : ComponentActivity() {
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if(hasFocus) window.insetsController?.hide(android.view.WindowInsets.Type.systemBars())
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         window.decorView.post { window.decorView.windowInsetsController?.hide(android.view.WindowInsets.Type.systemBars()) }

@@ -15,6 +15,10 @@ import java.time.Instant
 
 /** Debug-only geometry host for emulator input tests. No launcher, fake measurements or release UI. */
 class RendererTestActivity : ComponentActivity() {
+    override fun onWindowFocusChanged(hasFocus: Boolean) {
+        super.onWindowFocusChanged(hasFocus)
+        if(hasFocus) window.insetsController?.hide(android.view.WindowInsets.Type.systemBars())
+    }
     override fun attachBaseContext(base: Context) {
         val configuration=Configuration(base.resources.configuration).apply {
             uiMode = (uiMode and Configuration.UI_MODE_TYPE_MASK.inv()) or Configuration.UI_MODE_TYPE_WATCH
