@@ -1,4 +1,9 @@
 <resources>
+    <string name="change_avatar">Change .GLB</string>
+    <string name="imported_avatar">Imported avatar</string>
+    <string name="import_copying">Validating GLB…</string>
+    <string name="import_failed">Invalid or unreadable GLB. Previous avatar retained.</string>
+    <string name="import_provider_missing">This watch has no compatible document picker. Transfer a GLB with ADB using the documented desktop tool, then tap Upload Avatar again.</string>
     <string name="animation_control">Pause or play animation</string>
     <string name="settings_title">✎ Settings</string>
     <string name="theme_title">Theme</string>

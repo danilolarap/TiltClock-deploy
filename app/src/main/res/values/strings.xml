@@ -1,4 +1,9 @@
 <resources>
+    <string name="change_avatar">Cambiar .GLB</string>
+    <string name="imported_avatar">Avatar importado</string>
+    <string name="import_copying">Validando GLB…</string>
+    <string name="import_failed">GLB no válido o inaccesible. Se conserva el avatar anterior.</string>
+    <string name="import_provider_missing">Este reloj no tiene un selector de documentos compatible. Puedes transferir un GLB con ADB mediante la herramienta de escritorio documentada y volver a tocar Cargar Avatar.</string>
     <string name="animation_control">Pausar o reproducir animación</string>
     <string name="settings_title">✎ Ajustes</string>
     <string name="theme_title">Tema</string>
