@@ -5,7 +5,7 @@
     <uses-feature android:name="android.hardware.type.watch" android:required="true" />
     <uses-feature android:name="android.hardware.screen.round" android:required="true" />
     <uses-feature android:name="android.hardware.sensor.gyroscope" android:required="false" />
-    <application android:allowBackup="false" android:label="@string/app_name"
+    <application android:allowBackup="false" android:label="@string/app_name" android:icon="@drawable/ic_tiltclock"
         android:supportsRtl="true" android:theme="@android:style/Theme.DeviceDefault.NoActionBar">
         <meta-data android:name="com.google.android.wearable.standalone" android:value="true" />
         <activity android:name=".MainActivity" android:exported="true" android:taskAffinity="">
