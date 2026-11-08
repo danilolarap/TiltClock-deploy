@@ -11,7 +11,9 @@ object AvatarCatalog {
 }
 
 class AvatarRepository(private val context: Context) {
+    val imports=ImportedAvatarStore(context)
     suspend fun prepare(id: String): ByteArray = withContext(Dispatchers.IO) {
+        if(ImportLimits.validId(id)) return@withContext WebpPreparer.prepare(imports.read(id))
         require(id in AvatarCatalog.ids)
         if (id == "holo") HoloGenerator.generate()
         else context.assets.open("models/$id.glb").use { WebpPreparer.prepare(it.readBytes()) }
