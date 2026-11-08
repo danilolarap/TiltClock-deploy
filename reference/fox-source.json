@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/KhronosGroup/glTF-Sample-Assets",
+  "revision": "4995a638c96dbc94376d3d6164e70fee3ac7f7a2",
+  "path": "Models/Fox/glTF-Binary/Fox.glb",
+  "download": "https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Assets/4995a638c96dbc94376d3d6164e70fee3ac7f7a2/Models/Fox/glTF-Binary/Fox.glb",
+  "sha256": "d97044e701822bac5a62696459b27d7b375aada5de8574ed4362edbba94771f7",
+  "model": {"author": "PixelMannen", "copyright": "2014, Public", "license": "CC0-1.0"},
+  "riggingAnimation": {"author": "tomkranis", "copyright": "2014", "license": "CC-BY-4.0"},
+  "conversion": {"authors": ["@AsoboStudio", "@scurest"], "copyright": "2017", "license": "CC-BY-4.0"},
+  "changes": "GLB empaquetado sin cambios. Transformaciones de presentación en ejecución."
+}
