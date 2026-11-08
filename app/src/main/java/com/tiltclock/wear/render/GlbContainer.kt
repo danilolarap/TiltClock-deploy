@@ -28,8 +28,10 @@ data class GlbContainer(val json: JSONObject, val binary: ByteArray) {
             val length = b.int; require(length >= 0 && length % 4 == 0 && length == b.remaining()-4)
             require(b.int == 0x004e4942); val binary = ByteArray(length); b.get(binary)
             val json = JSONObject(String(text,Charsets.UTF_8))
+            require(json.getJSONObject("asset").getString("version")=="2.0") { "glTF 2.0 required" }
             val buffers = json.getJSONArray("buffers")
             require(buffers.length() == 1 && !buffers.getJSONObject(0).has("uri")) { "Embedded GLB required" }
+            require(buffers.getJSONObject(0).getLong("byteLength") in 0..binary.size.toLong()) { "Invalid buffer length" }
             val images = json.optJSONArray("images")
             if (images != null) repeat(images.length()) {
                 require(!images.getJSONObject(it).has("uri")) { "External images not supported" }
