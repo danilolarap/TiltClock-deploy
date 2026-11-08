@@ -31,7 +31,8 @@ class ImportedAvatarStore(private val context: Context) {
         finally { withContext(Dispatchers.IO) { inbox.delete() } }
     }
     private suspend fun copy(open: ()->InputStream?): String = withContext(Dispatchers.IO) {
-        require(folder.listFiles().orEmpty().sumOf { it.length() } < 128L*1024*1024) { "Import storage quota exceeded" }
+        val existing=folder.listFiles().orEmpty().sumOf { it.length() }
+        ImportLimits.checkStorage(existing,1)
         val id="import_"+UUID.randomUUID().toString().replace("-","")
         val target=file(id); val temporary=File(folder,"$id.part")
         try {
@@ -40,7 +41,7 @@ class ImportedAvatarStore(private val context: Context) {
                 temporary.outputStream().use { output ->
                     val chunk=ByteArray(64*1024); var total=0L
                     while(true) { currentCoroutineContext().ensureActive(); val read=input.read(chunk); if(read<0) break
-                        total+=read; ImportLimits.checkSize(total); output.write(chunk,0,read) }
+                        total+=read; ImportLimits.checkSize(total); ImportLimits.checkStorage(existing,total); output.write(chunk,0,read) }
                     output.fd.sync()
                 }
             }
