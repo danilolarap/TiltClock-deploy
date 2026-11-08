@@ -34,6 +34,8 @@ class ClockViewModel(application: Application) : AndroidViewModel(application) {
     suspend fun prepare(id: String) = avatars.prepare(id)
     fun selectAvatar(id: String) { selection.value = id to ++sequence }
     fun avatarAccepted(id: String) { viewModelScope.launch { preferences.commitAvatar(id) } }
+    fun setTheme(value: String) { viewModelScope.launch { preferences.setTheme(value) } }
+    fun setLanguage(value: String) { viewModelScope.launch { preferences.setLanguage(value) } }
     // Serialize writes and derive repeat steps from the latest requested value, not a lagging collector.
     private var requestedScale: Float? = null
     private var scaleWrite: kotlinx.coroutines.Job? = null
