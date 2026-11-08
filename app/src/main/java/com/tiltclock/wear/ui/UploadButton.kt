@@ -20,12 +20,12 @@ object CurvedUploadShape: Shape {
     }
 }
 @Composable
-fun UploadButton(scale: Float, click: () -> Unit) {
+fun UploadButton(scale: Float, changed: Boolean = false, click: () -> Unit) {
     Box(Modifier.height(48.dp).width((140*scale).dp).clickable(onClick=click),contentAlignment=Alignment.BottomCenter) {
         Box(Modifier.fillMaxWidth().height((40*scale).dp)
             .clip(androidx.compose.foundation.shape.RoundedCornerShape((10*scale).dp,(10*scale).dp,(24*scale).dp,(24*scale).dp)).clip(CurvedUploadShape)
             .background(Color(0xFF06B6D4)).padding(top=3.dp),contentAlignment=Alignment.TopCenter) {
-            androidx.compose.foundation.text.BasicText(stringResource(R.string.upload_avatar),style=androidx.compose.ui.text.TextStyle(
+            androidx.compose.foundation.text.BasicText(stringResource(if(changed) R.string.change_avatar else R.string.upload_avatar),style=androidx.compose.ui.text.TextStyle(
                 color=Color.White,fontFamily=Inter,fontSize=(10*scale).sp,fontWeight=androidx.compose.ui.text.font.FontWeight.Bold))
         }
     }
