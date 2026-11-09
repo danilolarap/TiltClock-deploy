@@ -6,11 +6,14 @@ class AnimationController(private val animator: Animator) {
     val available = animator.animationCount > 0
     var playing = true
     private var elapsed = 0f
+    private var applied = false
+    private val duration = if (available) animator.getAnimationDuration(0) else 0f
     fun frame(seconds: Float) {
         if (!available) return
+        if (!playing && applied) return
         if (playing) elapsed += seconds
-        val duration = animator.getAnimationDuration(0)
         animator.applyAnimation(0, if (duration > 0) elapsed % duration else 0f)
         animator.updateBoneMatrices()
+        applied = true
     }
 }

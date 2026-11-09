@@ -3,15 +3,17 @@ package com.tiltclock.wear.data
 import java.time.ZonedDateTime
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.flow
+import kotlinx.coroutines.flow.distinctUntilChanged
+import java.time.temporal.ChronoUnit
 
 class ClockRepository {
     val readings = flow {
         while (true) {
             // Re-read the system zone every tick; never freeze the zone at startup.
-            emit(ZonedDateTime.now())
+            emit(ZonedDateTime.now().truncatedTo(ChronoUnit.MINUTES))
             delay(1_000)
         }
-    }
+    }.distinctUntilChanged()
 }
 
 object ClockText {

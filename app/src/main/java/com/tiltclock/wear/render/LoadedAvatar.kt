@@ -9,6 +9,8 @@ class LoadedAvatar(val id: String, val asset: FilamentAsset, private val engine:
     private val centering = EntityManager.get().create()
     private val scale = if (id == "holo") 1f else ModelTransform.baseScale(asset.boundingBox.halfExtent)
     val animation = AnimationController(asset.instance.animator)
+    private var previousRotation: Quaternion? = null
+    private var previousScale = Float.NaN
     init {
         val tm = engine.transformManager
         tm.create(orientation); tm.create(centering)
@@ -22,7 +24,10 @@ class LoadedAvatar(val id: String, val asset: FilamentAsset, private val engine:
         }
     }
     fun frame(rotation: Quaternion, userScale: Float, dt: Float) {
-        engine.transformManager.setTransform(engine.transformManager.getInstance(orientation),rotation.matrix(scale*userScale))
+        if (rotation != previousRotation || userScale != previousScale) {
+            engine.transformManager.setTransform(engine.transformManager.getInstance(orientation),rotation.matrix(scale*userScale))
+            previousRotation = rotation; previousScale = userScale
+        }
         animation.frame(dt)
     }
     fun destroy(loader: AssetLoader, scene: Scene) {

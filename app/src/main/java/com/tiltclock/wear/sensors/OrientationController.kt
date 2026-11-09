@@ -14,6 +14,7 @@ class OrientationController(context: Context, private val transforms: TransformC
     private val orientation = if (gyro != null) manager.getDefaultSensor(Sensor.TYPE_GAME_ROTATION_VECTOR)
         ?: manager.getDefaultSensor(Sensor.TYPE_ROTATION_VECTOR) else null
     private var started = false
+    private val quaternionBuffer = FloatArray(4)
     fun start() {
         if (started) return
         transforms.recalibrate()
@@ -24,7 +25,7 @@ class OrientationController(context: Context, private val transforms: TransformC
     override fun onAccuracyChanged(sensor: Sensor?, accuracy: Int) = Unit
     override fun onSensorChanged(event: SensorEvent) {
         if (!started) return
-        val q = FloatArray(4); SensorManager.getQuaternionFromVector(q,event.values)
+        val q = quaternionBuffer; SensorManager.getQuaternionFromVector(q,event.values)
         val device = Quaternion(q[1],q[2],q[3],q[0]).normalized()
         val angle = when (rotation()) {
             Surface.ROTATION_90 -> -Math.PI.toFloat()/2

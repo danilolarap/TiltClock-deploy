@@ -10,6 +10,7 @@ object WebpPreparer {
     fun prepare(bytes: ByteArray): ByteArray {
         val glb = GlbContainer.parse(bytes); val root = glb.json
         val images = root.optJSONArray("images") ?: return bytes
+        if ((0 until images.length()).none { images.getJSONObject(it).optString("mimeType") == "image/webp" }) return bytes
         val views = root.getJSONArray("bufferViews")
         val output = ByteArrayOutputStream().apply { write(glb.binary) }
         var changed = false

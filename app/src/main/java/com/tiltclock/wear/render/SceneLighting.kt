@@ -13,7 +13,7 @@ class SceneLighting(private val engine: Engine, scene: Scene, view: View, camera
     init {
         camera.setExposure(16f,1f/125f,100f)
         camera.lookAt(0.0,0.0,3.8,0.0,0.0,0.0,0.0,1.0,0.0)
-        val shadow = LightManager.ShadowOptions().apply { mapSize = 1024; shadowFar = 10f; shadowNearHint = .1f }
+        val shadow = LightManager.ShadowOptions().apply { mapSize = 256; shadowFar = 10f; shadowNearHint = .1f }
         LightManager.Builder(LightManager.Type.DIRECTIONAL).color(1f,1f,1f).intensity(100_000f)
             .direction(-2f,-4f,-3f).castShadows(true).shadowOptions(shadow).build(engine,directional)
         LightManager.Builder(LightManager.Type.POINT).color(.002f,.468f,.658f).intensity(3_000_000f)

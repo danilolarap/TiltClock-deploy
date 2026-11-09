@@ -73,7 +73,11 @@ class FilamentRenderer(context: Context, private val transforms: TransformContro
     } }
     fun error(failure: Throwable) { handler.post { if (ready && !closed) loader.error(failure) } }
     fun toggleAnimation() { handler.post { if (ready && !closed) loader.toggle() } }
-    private fun schedule() { if (active && ready && !closed && chain != null) handler.post(frame) }
+    private fun schedule() {
+        // Surface attachment and lifecycle resume can arrive together: keep one frame loop.
+        handler.removeCallbacks(frame)
+        if (active && ready && !closed && chain != null) handler.post(frame)
+    }
     private val frame = object : Runnable {
         override fun run() {
             if (closed || !active || chain == null || !ready) return

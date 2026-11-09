@@ -16,6 +16,7 @@ class AvatarRepository(private val context: Context) {
         if(ImportLimits.validId(id)) return@withContext WebpPreparer.prepare(imports.read(id))
         require(id in AvatarCatalog.ids)
         if (id == "holo") HoloGenerator.generate()
-        else context.assets.open("models/$id.glb").use { WebpPreparer.prepare(it.readBytes()) }
+        // Bundled models are prepared offline: avoid parsing and copying their buffers on the watch.
+        else context.assets.open("models/$id.glb").use { it.readBytes() }
     }
 }
