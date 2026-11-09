@@ -1,0 +1,162 @@
+[
+  {
+    "id": "mapache",
+    "before": {
+      "triangles": 3122652,
+      "textures": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": 0
+    },
+    "after": {
+      "triangles": 142524,
+      "textures": [
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          512
+        ]
+      ],
+      "animations": 0
+    },
+    "bytes": 5008728
+  },
+  {
+    "id": "moneda",
+    "before": {
+      "triangles": 1975857,
+      "textures": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": 0
+    },
+    "after": {
+      "triangles": 273643,
+      "textures": [
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          512
+        ]
+      ],
+      "animations": 0
+    },
+    "bytes": 11489320
+  },
+  {
+    "id": "pajaro",
+    "before": {
+      "triangles": 3116404,
+      "textures": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": 0
+    },
+    "after": {
+      "triangles": 101837,
+      "textures": [
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          512
+        ]
+      ],
+      "animations": 0
+    },
+    "bytes": 3748344
+  },
+  {
+    "id": "riot",
+    "before": {
+      "triangles": 3133220,
+      "textures": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ],
+      "animations": 0
+    },
+    "after": {
+      "triangles": 45170,
+      "textures": [
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          512
+        ],
+        [
+          512,
+          512
+        ]
+      ],
+      "animations": 0
+    },
+    "bytes": 1902392
+  }
+]
