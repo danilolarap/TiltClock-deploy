@@ -15,6 +15,8 @@ Es una aplicación Wear OS circular, no una esfera seleccionable del sistema.
 - [Cinco fases y criterios de aceptación](docs/PLAN.md)
 - [Resultados finales y límites](docs/FASE5-RESULTADOS.md)
 - [Instalación en Galaxy Watch](docs/FASE5-INSTALACION.md)
+- [Nuevo menú visual de ajustes y su verificación](docs/AJUSTES.md)
+- [Optimización de modelos y renderizado para el reloj](docs/RENDIMIENTO.md)
 - [Superposición visual](docs/phase5-overlay.html)
 - [Matriz de validación](docs/phase5-matrix.json)
 - [Pruebas físicas pendientes](docs/FASE5-SAMSUNG.md)

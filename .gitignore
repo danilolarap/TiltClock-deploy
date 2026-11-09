@@ -8,6 +8,8 @@ local.properties
 *.iml
 .idea/
 .kotlin/
+.npm-cache/
+**/node_modules/
 tools/vendor/
 filament-metadata.xml
 docs/renderer-full-logcat.txt
