@@ -15,8 +15,6 @@ Launch dark es
 node tools/capture-android.mjs $Serial "docs/captures/$Prefix-dark.png"
 & $adb -s $Serial shell input tap 60 400
 Start-Sleep -Seconds 1
-& $adb -s $Serial shell input swipe 400 650 400 320 600
-Start-Sleep -Seconds 1
 node tools/capture-android.mjs $Serial "docs/captures/$Prefix-menu.png"
 & $adb -s $Serial shell wm density 560
 Launch light es
