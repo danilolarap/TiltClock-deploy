@@ -5,7 +5,14 @@
     <string name="import_failed">Invalid or unreadable GLB. Previous avatar retained.</string>
     <string name="import_provider_missing">This watch has no compatible document picker. Transfer a GLB with ADB using the documented desktop tool, then tap Upload Avatar again.</string>
     <string name="animation_control">Pause or play animation</string>
-    <string name="settings_title">✎ Settings</string>
+    <string name="settings_title">Settings</string>
+    <string name="edit_appearance">Edit model, theme and language</string>
+    <string name="models_title">Models</string>
+    <string name="model_counter">%1$d of %2$d</string>
+    <string name="previous_model">Previous model</string>
+    <string name="next_model">Next model</string>
+    <string name="use_model">Use model</string>
+    <string name="current_model">Done</string>
     <string name="theme_title">Theme</string>
     <string name="language_title">Language</string>
     <string name="light_theme">Light</string>

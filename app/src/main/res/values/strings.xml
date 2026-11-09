@@ -5,7 +5,14 @@
     <string name="import_failed">GLB no válido o inaccesible. Se conserva el avatar anterior.</string>
     <string name="import_provider_missing">Este reloj no tiene un selector de documentos compatible. Puedes transferir un GLB con ADB mediante la herramienta de escritorio documentada y volver a tocar Cargar Avatar.</string>
     <string name="animation_control">Pausar o reproducir animación</string>
-    <string name="settings_title">✎ Ajustes</string>
+    <string name="settings_title">Ajustes</string>
+    <string name="edit_appearance">Editar modelo, tema e idioma</string>
+    <string name="models_title">Modelos</string>
+    <string name="model_counter">%1$d de %2$d</string>
+    <string name="previous_model">Modelo anterior</string>
+    <string name="next_model">Modelo siguiente</string>
+    <string name="use_model">Usar modelo</string>
+    <string name="current_model">Listo</string>
     <string name="theme_title">Tema</string>
     <string name="language_title">Idioma</string>
     <string name="light_theme">Claro</string>

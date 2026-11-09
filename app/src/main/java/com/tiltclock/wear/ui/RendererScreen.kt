@@ -67,7 +67,7 @@ private fun WatchContent(model: ClockViewModel,state: ClockState,visualFixture: 
         documentOpen=false
         if(result.resultCode==Activity.RESULT_OK) result.data?.data?.let(model::importDocument)
     }
-    val settingsLabel=stringResource(R.string.settings_title)
+    val settingsLabel=stringResource(R.string.edit_appearance)
     val pauseLabel=stringResource(R.string.animation_control)
     val render by model.render.collectAsStateWithLifecycle()
     val selection by model.selection.collectAsStateWithLifecycle()
@@ -103,9 +103,10 @@ private fun WatchContent(model: ClockViewModel,state: ClockState,visualFixture: 
                     android.net.Uri.parse("package:${context.packageName}")).addFlags(android.content.Intent.FLAG_ACTIVITY_NEW_TASK))
                 else permissionLauncher.launch(Manifest.permission.ACTIVITY_RECOGNITION)
             }
-            Box(Modifier.align(Alignment.CenterStart).size(48.dp).semantics { contentDescription=settingsLabel }.clickable { picker = true },contentAlignment=Alignment.Center) {
-                Box(Modifier.size((24*scale).dp).background(LocalWatchPalette.current.glass,CircleShape),contentAlignment=Alignment.Center) {
-                    WatchIcon("pencil",Modifier.size((10*scale).dp))
+            Box(Modifier.align(Alignment.CenterStart).size(48.dp).semantics { contentDescription=settingsLabel; role=Role.Button }.clickable { picker = true },contentAlignment=Alignment.Center) {
+                Box(Modifier.size(32.dp).background(LocalWatchPalette.current.glass,CircleShape)
+                    .border(1.dp,LocalWatchPalette.current.cyan.copy(alpha=.65f),CircleShape),contentAlignment=Alignment.Center) {
+                    WatchIcon("pencil",Modifier.size(16.dp),cyan=true)
                 }
             }
             Column(Modifier.align(Alignment.CenterEnd),horizontalAlignment=Alignment.CenterHorizontally) {
